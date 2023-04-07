@@ -1,9 +1,10 @@
 import React from 'react';
 import { SearchBar } from '../SearchBar/SearchBar.jsx';
+import styles from './resultsPage.module.css';
 
 const ResultsPage = () => {
     return (
-        <div>
+        <div className={styles.searchBar}>
             <SearchBar/>
         </div>
     )

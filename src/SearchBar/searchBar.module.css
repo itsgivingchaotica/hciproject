@@ -1,0 +1,5 @@
+.neighborhoods{
+    min-width: 100px !important;
+    justify-content: flex-end;
+    margin-left: 1.5rem;
+}
