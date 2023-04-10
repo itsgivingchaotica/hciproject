@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
+import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlassLocation } from '@fortawesome/free-solid-svg-icons'
 import { Typeahead } from 'react-bootstrap-typeahead';
@@ -18,7 +19,7 @@ export function SearchBar(){
           }}
         >
             <Form.Control
-            className=""
+            className={styles.forms}
                 placeholder={neighborhood}
                 aria-label="Default"
                 aria-describedby="inputGroup-sizing-default"
@@ -104,8 +105,8 @@ export function SearchBar(){
     
     return (
         <>
-        <div className={styles.searchBar}>
-    <InputGroup className="mb-2">
+        <div className={styles.neighborhoods}>
+        <InputGroup className="mb-2 mt-4">
         <InputGroup.Text id="inputGroup-sizing-default">
           Search
         </InputGroup.Text>
@@ -125,7 +126,7 @@ export function SearchBar(){
                 onChange={handleOptionChange}
             />
             <InputGroup.Text id="inputGroup-sizing-default" style={{ borderLeft: 'none' }}>
-            Near Zip
+            By Zipcode
             </InputGroup.Text>
             {filterType === 'near' && (
                 <Form.Control
@@ -166,7 +167,12 @@ export function SearchBar(){
             </Dropdown.Menu>
             </Dropdown>
         )}
-        <FontAwesomeIcon icon={faMagnifyingGlassLocation} />
+        <Button 
+          variant="success" 
+          className={styles.submit}
+          onClick={() => handleSearch(e)}>
+            <FontAwesomeIcon icon={faMagnifyingGlassLocation}/>
+        </Button>
       </InputGroup>
       </div>
       </>

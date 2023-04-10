@@ -1,0 +1,49 @@
+.result{
+    display: flex;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.info{
+    margin-left: 25px;
+    max-height: 200px;
+}
+
+.result-image{
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.address{
+    /* display: flex;
+    font-size: 20px;
+    justify-content: space-between;
+    align-items: center; */
+    display: flex;
+    flex-grow: 1;
+    height: 200px;
+    flex-wrap: nowrap;
+    width: 400px;
+}
+
+.writeReview{
+    display: flex;
+    font-size: 30px;
+    justify-content: space-between;
+    border: 3px solid black;
+}
+
+.share{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    .address{
+        width: 200px;
+    }
+
+  }

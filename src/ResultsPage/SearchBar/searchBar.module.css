@@ -1,0 +1,13 @@
+.neighborhoods{
+    min-width: 250px !important;
+    justify-content: flex-end;
+    margin-right: 50px;
+}
+
+.button.submit{
+    background-color: yellow !important;
+}
+
+.forms{
+    border-radius: 0 !important;
+}
