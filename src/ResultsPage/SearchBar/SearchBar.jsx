@@ -1,5 +1,5 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Fuse from 'fuse.js';
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -9,7 +9,21 @@ import { faMagnifyingGlassLocation } from '@fortawesome/free-solid-svg-icons'
 import { Typeahead } from 'react-bootstrap-typeahead';
 import styles from './searchBar.module.css';
 
-export function SearchBar(){
+export function SearchBar({results,searchTerm,setSearchTerm,options,filteredResults,setFilteredResults}){
+
+  const [zipCodes, setZipCodes] = useState([]);
+  const [zip,setZip] = useState("");
+  
+  useEffect(() => {
+    fetch('/results.json')
+      .then(response => response.json())
+      .then(data => {
+        const zipcodes = data.results.map(result => ({
+          zipcode: result.zipcode
+        }));
+        setZipCodes(zipcodes);
+      });
+  }, []);
 
     const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
         <a ref={ref}
@@ -67,17 +81,32 @@ export function SearchBar(){
     });
 
     const handleOptionChange = (e) => {
-        setFilterType('');
         setFilterType(e.target.value);
     }
 
     const handleOptionSelect = (eventKey) => {
-        setNeighborhood('');
         setNeighborhood(eventKey);
         console.log(eventKey);
     }
 
-    const options = [
+    const handleSearchTermChange = (e) => {
+      setSearchTerm(e.target.value);
+      console.log(searchTerm);
+    }
+
+    const handleZipChange = (e) => {
+      setZip(e.target.value);
+      console.log(zip);
+    }
+
+    const handleSearchEngine = () => {
+      let inquiry = `${searchTerm} ${neighborhood} ${zip}`;
+      setSearchTerm(inquiry); 
+      const fuse = new Fuse(results,options);
+      setFilteredResults(fuse.search(searchTerm).map((result) => result.item));
+    }
+
+    const neighborhoodList = [
         'Bay Ridge',
         'Bedford-Stuyvesant',
         'Bensonhurst',
@@ -96,7 +125,7 @@ export function SearchBar(){
         'Midwood',
         'Park Slope',
         'Prospect Heights',
-        'Propsect Park',
+        'Propsect Lefferts Gardens',
         'Red Hook',
         'Sheepshead Bay',
         'Sunset Park',
@@ -114,6 +143,7 @@ export function SearchBar(){
             placeholder="parks, museums, theaters..."
           aria-label="Text input with radio button"
           aria-describedby="inputGroup-sizing-default"
+          onChange={(e) => handleSearchTermChange(e)}
         />
         </InputGroup>
 
@@ -123,23 +153,25 @@ export function SearchBar(){
                 id="near"
                 value="near"
                 checked={filterType === 'near'}
-                onChange={handleOptionChange}
+                onChange={() => handleOptionChange()}
             />
             <InputGroup.Text id="inputGroup-sizing-default" style={{ borderLeft: 'none' }}>
             By Zipcode
             </InputGroup.Text>
             {filterType === 'near' && (
-                <Form.Control
-                    placeholder="11210"
-                    aria-label="Default"
-                    aria-describedby="inputGroup-sizing-default"
-                />
-                // <Typeahead
+                // <Form.Control
                 //     placeholder="11210"
-                //     labelkey="zipcode"
-                //     options={sortBy(zipcodes,'zipcode')}
-                //     selected={selected}
+                //     aria-label="Default"
+                //     aria-describedby="inputGroup-sizing-default"
                 // />
+                <Typeahead 
+                    defaultSelected={zipCodes.find(zipCode => zipCode === "11210")}
+                    id="zipcodes"
+                    labelKey="zipcode"
+                    options={zipCodes}
+                    placeholder="11210"
+                    onChange={handleZipChange}
+                />
             )}
         
         <InputGroup.Radio 
@@ -159,9 +191,9 @@ export function SearchBar(){
                 {neighborhood}
               </Dropdown.Toggle>
               <Dropdown.Menu as={CustomMenu} style={{ maxHeight: "200px", overflowY: "scroll" }}> 
-                {options.map(option => (
-                    <Dropdown.Item eventKey={option} key={option}>
-                        {option}
+                {neighborhoodList.map(_neighborhood => (
+                    <Dropdown.Item eventKey={_neighborhood} key={_neighborhood}>
+                        {_neighborhood}
                     </Dropdown.Item>
                     ))}
             </Dropdown.Menu>
@@ -170,7 +202,7 @@ export function SearchBar(){
         <Button 
           variant="success" 
           className={styles.submit}
-          onClick={() => handleSearch(e)}>
+          onClick={() => handleSearchEngine()}>
             <FontAwesomeIcon icon={faMagnifyingGlassLocation}/>
         </Button>
       </InputGroup>

@@ -1,5 +1,5 @@
 .searchBar { 
-    display: flex;
+    display: flex !important;
     justify-content: flex-end;
     
 }

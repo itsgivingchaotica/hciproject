@@ -1,7 +1,7 @@
 {
     "results": [
-      { "id": 1, "name": "Prospect Park", "alias": "prospect-park-brooklyn", "latitude": 40.6602, "longitude": -73.96895 },
-      { "id": 2, "name": "Coney Island Beach and Boardwalk", "alias": "coney-island-beach-and-boardwalk-brooklyn-3", "latitude": 40.57281759076016, "longitude": -73.97876837638132 },
-      { "id": 3, "name": "Brooklyn Museum", "alias": "brooklyn-museum-brooklyn-2", "latitude": 40.6714340265325, "longitude": -73.96354477160101 }
+      { "id": 1, "name": "Prospect Park", "alias": "prospect-park-brooklyn", "latitude": 40.6602, "longitude": -73.96895, "zipcode": "11215"},
+      { "id": 2, "name": "Coney Island Beach and Boardwalk", "alias": "coney-island-beach-and-boardwalk-brooklyn-3", "latitude": 40.57281759076016, "longitude": -73.97876837638132, "zipcode":"11224" },
+      { "id": 3, "name": "Brooklyn Museum", "alias": "brooklyn-museum-brooklyn-2", "latitude": 40.6714340265325, "longitude": -73.96354477160101, "zipcode":"11238" }
     ]
   }

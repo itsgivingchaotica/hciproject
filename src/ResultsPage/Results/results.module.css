@@ -17,3 +17,8 @@
 .mapped{
    display: flex;
 }
+
+.link,.link:active,.link:focus,.link:link,.link:visited,.link:hover{
+    text-decoration: none;
+    color: inherit;
+}

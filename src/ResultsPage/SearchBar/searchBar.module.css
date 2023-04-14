@@ -4,10 +4,12 @@
     margin-right: 50px;
 }
 
-.button.submit{
-    background-color: yellow !important;
-}
-
 .forms{
     border-radius: 0 !important;
 }
+
+.my-typeahead-input .rbt-close {
+    font-size: 1rem;
+    padding: 0.25rem;
+    /* Add any other custom styles for the clear button here */
+  }
