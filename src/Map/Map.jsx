@@ -4,15 +4,16 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { GoogleMap, MarkerF } from '@react-google-maps/api'
 import styles from './map.module.css'
 
-export function Map({latitude,longitude}){
+export function Map({latitude,longitude,focus}){
     // const center = useMemo(() => )
-    // latitude = parseFloat(latitude);
-    // longitude = parseFloat(longitude);
-    const center = useMemo(() => ({lat:latitude,lng:longitude}),[])
-    console.log(center);
+    parseFloat(latitude);
+    parseFloat(longitude);
+    const center = useMemo(() => ({lat:latitude,lng:longitude}),[latitude,longitude])
+    console.log(latitude + " latitude from the MAP" + longitude + " plus longitude");
+  
     return (
-        <div className={styles.width}>
-            <GoogleMap zoom={13} center={center} mapContainerClassName={styles.mapContainer}>
+        <div className={styles.widthClass}>
+            <GoogleMap zoom={focus} center={center} mapContainerClassName={focus==15 ? styles.smallWidth : styles.mapContainer}>
                 <MarkerF position={center}></MarkerF>
             </GoogleMap>
         </div>

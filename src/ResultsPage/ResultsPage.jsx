@@ -4,32 +4,26 @@ import { SearchBar } from './SearchBar/SearchBar.jsx';
 import { Results } from './Results/Results.jsx';
 import styles from './resultsPage.module.css';
 import { useParams, Routes, Route } from 'react-router-dom';
-import { ResultDetails } from './Results/Result/ResultDetails.jsx'
+import { ResultDetails } from './Results/Result/ResultDetails/ResultDetails.jsx'
+import { useBusinessDetails } from '../hooks/yelp-api/useBusinessDetails.js'
+const ResultsPage = ({results,reviewName,setReviewName,handleSetName,setZipcode,setPhoto1,searchTerm,filteredResults,summaryBanner,setSummaryBanner,setReviewLatitude,setReviewLongitude,reviewLatitude,reviewLongitude}) => {
+    // const [summaryBanner,setSummaryBanner] = useState("Results")
+    // const [searchTerm,setSearchTerm] = useState("");
+    // const [filteredResults,setFilteredResults] = useState(results);
 
-const ResultsPage = ({results}) => {
-    const [searchTerm,setSearchTerm] = useState("Prospect Park");
-    const [filteredResults,setFilteredResults] = useState([]);
-    const options = {
-        minMatchCharLength: 3,
-        keys: [
-          "id",
-          "name",
-          "alias",
-          "latitude",
-          "longitude",
-          "zipcode",
-        ]
-    }
+    // if (filteredResults && filteredResults.length > 0) {
+    //     console.log(filteredResults[0].alias);
+    //     console.log(filteredResults);
+    //   } else {
+    //     console.log('No results found');
+    //   }
+    // console.log(reviewLatitude);
     
     return (
         <>
-        <div className={styles.searchBar}>
-            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} filteredResults={filteredResults}setFilteredResults={setFilteredResults} options={options} results={results}/>
-           
-        </div>
         <Routes>
-                    <Route path="/results/:id" element={<ResultDetails filteredResults={filteredResults} />} />
-                    <Route path="/results" element ={<Results filteredResults={filteredResults}/>}/>
+                    {/* <Route path="/results/:id" element={<ResultDetails filteredResults={filteredResults} />} /> */}
+                    <Route path="/results/*" element ={<Results filteredResults={filteredResults} searchTerm={searchTerm} summaryBanner={summaryBanner}results={results} reviewName={reviewName}setReviewName={setReviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1} setSummaryBanner={setSummaryBanner}setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude}/>}/>
         </Routes>
         {/* <Results results={results}/> */}
         </>

@@ -1,8 +1,19 @@
 .mapContainer{
-    width: 100%;
+    width: 250%;
     height: 100vh;
 }
 
 .width{
     width: 600px;
+}
+
+.smallWidth {
+    width: 50%;
+}
+
+.smallWidth{
+    height: 50vh !important;
+    height: 50% !important;
+    padding-bottom: 50%;
+    position: relative;
 }

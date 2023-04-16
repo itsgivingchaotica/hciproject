@@ -5,6 +5,7 @@
     margin-right: 25px;
     text-decoration: none !important;
     color: inherit;
+    overflow: hidden !important;
 }
 
 .info{
@@ -12,11 +13,23 @@
     max-height: 200px;
 }
 
+.info :hover{
+  border-width: 3px;
+}
+
 .result-image{
     width: 200px;
     height: 200px;
     border-radius: 5px;
+    object-fit: cover;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease-in-out;
 }
+
+.result-image:hover{
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); /* add a glowing box-shadow effect */
+    }
+
 
 .address{
     /* display: flex;
@@ -27,7 +40,7 @@
     flex-grow: 1;
     height: 200px;
     flex-wrap: nowrap;
-    width: 400px;
+    width: 600px;
 }
 
 .writeReview{
@@ -43,9 +56,33 @@
     align-items: center;
 }
 
+.carousel-img {
+    width: 200px;
+    height: 200px;
+  }
+
+.photos{
+    width:1000px;
+    height:500px;
+    object-fit: cover;
+  }
+
+.resultsDetails{
+  
+    width:900px;
+    height:500px;
+    margin: auto;
+}
+
+.mapWidth{
+    width:100px;
+    height:100px;
+}
+
 @media only screen and (max-width: 1000px) {
     .address{
         width: 200px;
     }
 
   }
+  

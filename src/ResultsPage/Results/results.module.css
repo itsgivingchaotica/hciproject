@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    width:100%;
 }
 
 .mapped{
@@ -21,4 +22,8 @@
 .link,.link:active,.link:focus,.link:link,.link:visited,.link:hover{
     text-decoration: none;
     color: inherit;
+}
+
+.width{
+    width: 200px;
 }

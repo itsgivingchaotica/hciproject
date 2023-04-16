@@ -7,9 +7,10 @@ import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlassLocation } from '@fortawesome/free-solid-svg-icons'
 import { Typeahead } from 'react-bootstrap-typeahead';
+import { Link, Routes, Route} from 'react-router-dom'
 import styles from './searchBar.module.css';
 
-export function SearchBar({results,searchTerm,setSearchTerm,options,filteredResults,setFilteredResults}){
+export function SearchBar({results,searchTerm,setSearchTerm,options,filteredResults,setFilteredResults,setSummaryBanner,setLocationInquiry}){
 
   const [zipCodes, setZipCodes] = useState([]);
   const [zip,setZip] = useState("");
@@ -70,18 +71,13 @@ export function SearchBar({results,searchTerm,setSearchTerm,options,filteredResu
         },
       );
 
-    const [filterType,setFilterType] = useState(() => {
-        const initialType = "near";
-        return initialType;
-    });
+    const [filterType,setFilterType] = useState("near");
 
-    const [neighborhood,setNeighborhood] = useState(() => {
-        const initialType = "Prospect Park";
-        return initialType;
-    });
+    const [neighborhood,setNeighborhood] = useState("Prospect Park");
 
-    const handleOptionChange = (e) => {
-        setFilterType(e.target.value);
+    const handleOptionChange = () => {
+      const newFilterType = filterType === "near" ? "in" : "near";
+      setFilterType(newFilterType);
     }
 
     const handleOptionSelect = (eventKey) => {
@@ -99,12 +95,28 @@ export function SearchBar({results,searchTerm,setSearchTerm,options,filteredResu
       console.log(zip);
     }
 
-    const handleSearchEngine = () => {
-      let inquiry = `${searchTerm} ${neighborhood} ${zip}`;
+    const handleSearchEngine = (e) => {
+      let inquiry;
+      if (filterType == "near"){
+        inquiry = `${searchTerm} ${zip}`;
+      }
+      else {
+        inquiry = `${searchTerm} ${neighborhood}`;
+      }
+      let ban = searchTerm;
+      setSummaryBanner(ban);
+      // let inquiry = `${searchTerm} ${neighborhood} ${zip}`;
       setSearchTerm(inquiry); 
+      setLocationInquiry(inquiry);
+      console.log("THE INQUIRY: " + inquiry);
       const fuse = new Fuse(results,options);
-      setFilteredResults(fuse.search(searchTerm).map((result) => result.item));
+      const frs = fuse.search(searchTerm).map((result) => result.item);
+      setFilteredResults(frs);
+      console.log("filteredresults: " + filteredResults);
+      setSearchTerm(ban);
     }
+    
+    console.log(filteredResults);
 
     const neighborhoodList = [
         'Bay Ridge',
@@ -140,7 +152,7 @@ export function SearchBar({results,searchTerm,setSearchTerm,options,filteredResu
           Search
         </InputGroup.Text>
         <Form.Control
-            placeholder="parks, museums, theaters..."
+          placeholder="parks, museums, theaters..."
           aria-label="Text input with radio button"
           aria-describedby="inputGroup-sizing-default"
           onChange={(e) => handleSearchTermChange(e)}
@@ -170,7 +182,11 @@ export function SearchBar({results,searchTerm,setSearchTerm,options,filteredResu
                     labelKey="zipcode"
                     options={zipCodes}
                     placeholder="11210"
-                    onChange={handleZipChange}
+                    onChange={(selected) => {
+                      if (selected && selected.length > 0) {
+                        setZip(selected[0].zipcode);
+                      }
+                    }}
                 />
             )}
         
@@ -199,13 +215,16 @@ export function SearchBar({results,searchTerm,setSearchTerm,options,filteredResu
             </Dropdown.Menu>
             </Dropdown>
         )}
+        <Link to="/results/">
         <Button 
           variant="success" 
           className={styles.submit}
           onClick={() => handleSearchEngine()}>
             <FontAwesomeIcon icon={faMagnifyingGlassLocation}/>
         </Button>
+        </Link>
       </InputGroup>
+
       </div>
       </>
   );
