@@ -16,6 +16,9 @@ function App() {
   const [reviewLatitude,setReviewLatitude] = useState('40.63124780572077');
   const [reviewLongitude,setReviewLongitude]=useState('-73.95238020363617');
 
+  const [directionMap,setDirectionMap] = useState(/** @typeof google.maps.Map */(null)); 
+
+
   function handleSetName(aname){
     setReviewName(aname);
     console.log(reviewName + " handled")
@@ -68,7 +71,7 @@ function App() {
       </div>
       <Routes>
         <Route path="*" element={<ResultsPage results={results} setReviewName={setReviewName} reviewName={reviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1}filteredResults={filteredResults}searchTerm={searchTerm}exact summaryBanner={summaryBanner}setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude}/>} />
-        <Route path="/results/:id/" element={<ResultDetails reviewName={reviewName} photoOne={photoOne} zipCode={zipCode} setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude}/>}/>
+        <Route path="/results/:id/" element={<ResultDetails reviewName={reviewName} photoOne={photoOne} zipCode={zipCode} setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude} directionMap={directionMap}setDirectionMap={setDirectionMap}/>}/>
       </Routes>
     </div>
 

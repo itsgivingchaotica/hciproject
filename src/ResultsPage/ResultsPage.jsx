@@ -5,7 +5,6 @@ import { Results } from './Results/Results.jsx';
 import styles from './resultsPage.module.css';
 import { useParams, Routes, Route } from 'react-router-dom';
 import { ResultDetails } from './Results/Result/ResultDetails/ResultDetails.jsx'
-import { useBusinessDetails } from '../hooks/yelp-api/useBusinessDetails.js'
 const ResultsPage = ({results,reviewName,setReviewName,handleSetName,setZipcode,setPhoto1,searchTerm,filteredResults,summaryBanner,setSummaryBanner,setReviewLatitude,setReviewLongitude,reviewLatitude,reviewLongitude}) => {
     // const [summaryBanner,setSummaryBanner] = useState("Results")
     // const [searchTerm,setSearchTerm] = useState("");

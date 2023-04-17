@@ -21,6 +21,6 @@ useEffect(() => {
 
     if (!isLoaded) return <div>Loading...</div>;
 
-    return <Map latitude={pLatitude} longitude={pLongitude} focus={focus}/>
+    return <Map latitude={pLatitude} longitude={pLongitude} focus={focus} />
 
 }

@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { useParams } from 'react-router-dom';
+import Button from 'react-bootstrap/Button'
 import styles from '../result.module.css';
 import { Banner } from "../../Banner.jsx"
 import { SearchBar } from "../../../SearchBar/SearchBar.jsx"
 import { MapLoader } from "../../../../Map/MapLoader.jsx"
 
 export function ResultDetails(props){
+
   const { reviewName, photoOne, zipCode,reviewLongitude,reviewLatitude} = props;
 
-  
   console.log(reviewName + " " + photoOne + " " + zipCode + " " + reviewLatitude + " " + reviewLongitude + " sources");
   return (
     <div className={styles.resultsDetails}>

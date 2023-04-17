@@ -6,7 +6,6 @@ import { MapLoader } from "../../Map/MapLoader.jsx";
 import { HashRouter, Route, Link } from 'react-router-dom';
 import { ResultDetails } from "./Result/ResultDetails/ResultDetails.jsx";
 import { Routes, useParams } from 'react-router-dom';
-import * as api from './../../hooks/yelp-api/api.js';
 
 
 export function Results({filteredResults,business,searchTerm,setSummaryBanner,reviewName,setReviewName,handleSetName,setZipcode,setPhoto1,reviewLatitude,reviewLongitude,setReviewLatitude,setReviewLongitude}){
