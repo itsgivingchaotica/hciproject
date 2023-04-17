@@ -1,0 +1,97 @@
+.myApp {
+  background-color: #f4e1f1;
+}
+body {
+  overflow: hidden;
+}
+h1 {
+  text-align: center;
+}
+.navbar {
+  background-color: #eccbe8;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.companyLogo {
+  align-self: left;
+  padding: 0px;
+}
+.questionBox {
+  border: 10px;
+  border-radius: 100px;
+  padding: 80px;
+  background-color: #eccbe8;
+  width: 60%;
+  align-self: center;
+  margin: auto;
+  margin-top: 35px;
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 45px;
+  box-shadow: 5px 10px 18px #dd72ce;
+  transition-duration: 0.5s;
+}
+.questionBox:hover {
+  opacity: 80%;
+  margin-top: 50px;
+  transition-duration: 0.5s;
+}
+.answerStack {
+  display: flex;
+  flex-direction: column;
+  row-gap: 28px;
+}
+.choiceBtn {
+  align-self: center;
+  background-color: white;
+  border-radius: 5px;
+  width: 60%;
+  height: 60px;
+  min-height: 60px;
+  border-width: 1px 2px 2px 1px;
+  border-color: rgb(239, 175, 230);
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+}
+.choiceBtn:hover {
+  background-color: rgb(236, 236, 236);
+  transition-duration: 0.2s;
+}
+.choiceBtn:active {
+  background-color: pink;
+}
+
+.surveyOver {
+  width: 300px;
+  height: 300px;
+  max-width: 500px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.loadIMG {
+  margin-left: 8.6%;
+}
