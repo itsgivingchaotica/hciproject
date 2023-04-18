@@ -164,13 +164,6 @@ const handleSearchEngine = () => {
         <Route path="/results/:id/" element={<ResultDetails reviewName={reviewName} photoOne={photoOne} zipCode={zipCode} setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude}/>}/>
         <Route path="/resources-page" element={<ResourcesPage accordionItems={accordionItems}/>}/>
       </Routes>
-{/* ======= */}
-    {/* <div className="App"> */}
-      {/* <Navbar /> */}
-
-
-
-{/* >>>>>>> 23328df (Home and resource page commit) */}
     </div>
 
   );
