@@ -27,7 +27,7 @@ function Header() {
                 </ul>    
 
                 <h2 className="cta-text">You will easily find something to destress</h2>
-                <a href="/" className="cta-btn">Take Survery</a>
+                <a href="/" className="cta-btn">Take Survey</a>
             </div>
 
             <div className="scenery">
