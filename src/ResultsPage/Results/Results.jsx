@@ -48,9 +48,14 @@ const location = {
                 </div> */}
                 <div className={styles.mapped}>
                 <div>
-                <div className="adjustBanner">
+                {filteredResults == "" ? (<div classNgime="adjustBanner">
+              
+          <Banner summaryBanner={summaryBanner} searchTerm={searchTerm} locationInquiry={locationInquiry} numberResults={results.length} zip={zip} daneighborhood={daneighborhood}/>
+          </div>):(<div className="adjustBanner">
+              
           <Banner summaryBanner={summaryBanner} searchTerm={searchTerm} locationInquiry={locationInquiry} numberResults={filteredResults.length} zip={zip} daneighborhood={daneighborhood}/>
-          </div>
+          </div>)}  
+                
           <br></br>
                     {filteredResults == "" ? (results.map(result => (
                         // <Link to={`/results/${result.id}`} key={result.id} className={styles.link}>
