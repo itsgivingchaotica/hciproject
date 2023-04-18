@@ -13,6 +13,11 @@
     max-height: 200px;
 }
 
+.locationinfo{
+    font-size: 40px;
+    text-align: center;
+}
+
 .info :hover{
   border-width: 3px;
 }
@@ -72,11 +77,25 @@
     width:900px;
     height:500px;
     margin: auto;
+  flex-wrap: wrap;
 }
 
 .mapWidth{
     width:100px;
     height:100px;
+}
+
+.blurb{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+
+.mapinfo{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -86,3 +105,16 @@
 
   }
   
+  .infoContainer {
+      display: grid;
+      flex-basis: 100%;
+  }
+
+  .mapContainer {
+      flex-basis: 50%;
+      justify-content: center;
+  }
+
+  .accordionContainer {
+      flex-basis: 50%;
+  }

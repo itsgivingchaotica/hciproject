@@ -16,9 +16,11 @@
         "website":"http://www.prospectpark.org/",
         "telephone":"(718) 965-8951",
         "neighborhood":"Prospect Lefferts Gardens",
-        "tag1":"",
-        "tag2":"",
-        "tag3":""
+        "tag":"outdoor nature picnic biking green spacious relaxing natural scenic diverse vibrant historical community arts",
+        "blurb1":"By 8th St, they have the Bandshell which often has free concerts year-round, and some of them are really good.",
+        "blurb2":"Great scenery, a farmer's market on Saturdays (Grand Army Plaza) and on Wednesdays (Bartel Pritchard Square).",
+        "blurb3":"And the cultural activities including the drum circles, Celebrate Brooklyn, and much more are also great fun.'",
+        "about":"'Widely known for its intricate manmade watercourse (wetlands) and its trees, the bulk of Brooklyn's remaining indigenous forest, the park is a highly functional green space. Contained within its 526 acres are a zoo, the first urban-area Audubon Center in the nation, an ice rink, a band shell, a carousel, and dozens of athletic and recreational facilities. Begin your explorations today and join the eight million annual visitors reaping the benefits of this beautiful park!'"
     },
     { 
         "id": 2, "name": "Coney Island Beach and Boardwalk", 
@@ -26,7 +28,7 @@
         "latitude": 40.57281759076016, 
         "longitude": -73.97876837638132, 
         "zipcode":"11224", 
-        "rating": 4 ,
+        "rating": 4,
         "photo1":"https://i.ibb.co/hgvM4z0/istockphoto-606632708-612x612.jpg",
         "photo2": "https://i.ibb.co/c8hc1rZ/6046af64-b362-443a-8436-4b23efc8e086.jpg",
         "photo3":"https://i.ibb.co/s9k86Wj/feddcd-44de6fad18254f26b92593748b61a496-mv2.jpg",
@@ -35,9 +37,11 @@
         "website":"https://www.coneyislandfunguide.com/",
         "telephone":"(718) 594-7895",
         "neighborhood":"Coney Island",
-        "tag1":"",
-        "tag2":"",
-        "tag3":""
+        "tag":"iconic colorful nostalgic fun amusement energetic crowed summer ocean views",
+  "blurb1":"'My daughters wanted to ride some rides so I insisted they hit a few classics like the Cyclone and the Wonderwheel'",
+  "blurb2":"'...Am hoping to one day make it to the famed annual July Fourth Hot Dog Eating Contest and the Mermaid Parad'",
+  "blurb3":	"'Best viewing spot is on the Boardwalk from West 10th to West 12th Streets or from the Wonder Wheel!'",
+  "about":"'Coney Island Beach and Boardwalk is a well-known destination in New York City, located in the southern part of Brooklyn.the southern part of Brooklyn. It features a large beach, a historic boardwalk, and a variety of amusement park rides and attractions. Here's some additional information about Coney Island Beach and Boardwalk. The beach is over 3 miles long and is known for its wide expanse of sand and its views of the Atlantic Ocean. The boardwalk dates back to the early 20th century and is home to a variety of food vendors, souvenir shops, and arcades. Luna Park is an amusement park located on the boardwalk that features a number of rides, including the famous Cyclone roller coaster. Nathan's Famous, a hot dog stand that has been in business since 1916, is located near the boardwalk and is a popular spot for visitors. Coney Island also hosts a number of events throughout the year, including the Mermaid Parade, a Halloween parade, and a summer fireworks series.'"
     },
     { 
         "id": 3, 
@@ -55,9 +59,11 @@
         "website":"https://www.brooklynmuseum.org/",
         "telephone":"(718) 638-5000",
         "neighborhood":"Prospect Heights",
-        "tag1":"",
-        "tag2":"",
-        "tag3":"" 
+        "tag":"Artistic Diverse Educational Contemporary Cultural Inspiring Extensive Historical Interactive Multimedia",
+  "blurb1":"'This particular day was the first Saturday and they alway have social gathering and entertainment going on.'",
+  "blurb2":"'I came here for the equally impressive Jean Michel Basquiat Unknown Notebooks and Kehinde Wiley A New Republic exhibits.'",
+  "blurb3":"'I had been promised that my mind would be blown by the exquisite Thierry Mugler exhibit, but really, nothing could have prepared me for what I would encounter.'",
+  "about":"The Brooklyn Institute of Arts and Sciences, the forebear of the Brooklyn Museum, was conceived in the nineteenth century as the focal point of a planned cultural, recreational, and educational district for the burgeoning city of Brooklyn. Although the scope of that envisioned complex of parks, gardens, and buildings changed after the once-independent Brooklyn was absorbed into New York City in 1898, many features of the plan were eventually realized and are reflected in what can be seen today. In the area of land once designated as the Brooklyn Institute Triangle can be found not only the Brooklyn Museum but also such other institutions and facilities as the Brooklyn Botanic Garden, the Prospect Park Zoo, Mount Prospect Park, and the Central Library of the Brooklyn Public Library system. Just beyond the western edge of the Institute Triangle complex stands the monumental entrance to Prospect Park, marked by the Soldiers' and Sailors' Memorial Arch in the center of Grand Army Plaza."
     },
     {
         "id": 4, 
@@ -75,9 +81,11 @@
         "website":"http://www.thevillageunderground.com",
         "telephone":"(212) 777-7745",
         "neighborhood":"Greenwich Village",
-        "tag1":"",
-        "tag2":"",
-        "tag3":"" 
+        "tag":"Cozy, Intimate, Underground, Eclectic, Hip, Unique, Artistic, Creative, Culturally diverse, Live performances, Comedy",
+        "blurb1":"'This is a great hidden gem -- it's located under the Fat Black Pussycat (or whatever it's called..'",
+        "blurb2":"'Diverse cast, incriminating photos, and free shots - that's a winning recipe for a great night, Comedy Cellar!'",
+  "blurb3":"'Seemlessly transitioning from Roberta Flack to Tribe Called Quest to Stevie Wonder, the house band knocked me out...'",
+  "about":"'The “Village Underground” is the best place to hear live music in New York City. Routinely booking acts that usually play rooms 2 or 3 times the size – the “Underground” gives the discerning music lover a chance to see some of the world’s greatest performers in an utterly intimate setting. We like the description that Citysearch has written.Surrounded by side booths and candle-lit tables, the intimate club’s low stage is bathed in blue light. A step up in the rear–where political posters on naked brick walls recall the Village’s radical bohemian past–more tables, ample standing room and a long, polished bar accommodate the crowd. Sight lines and sound are impeccable.'"
     },
     {
       "id": 5, 
@@ -95,9 +103,11 @@
       "website":"http://www.thestandnyc.com",
       "telephone":"(212) 677-2600",
       "neighborhood":"Gramercy",
-      "tag1":"",
-      "tag2":"",
-      "tag3":"" 
+      "tag":"Comedy Entertainment Upscale Modern Intimate Cozy Vibrant Dynamic Talented comedians Craft cocktails Food menu Live performances Reservations",
+    "blurb1":"'Only been here three time but I've been a major comedy fan my whole life and this place clearly understands what it takes.'",
+    "blurb2":"'There isn't a bad seat in the room. It is first come first served seating so the closer to the front of the line you are the better your seats.'",
+    "blurb3":"'The ambience was classy as always and the music was great. I was surprised it wasn't more full, as it's the perfect bottomless brunch spot for the best price.'",
+    "about":"'or the last seven years, The Stand has been a staple of the New York comedy scene by hosting A-list comedians and becoming a home to the city's funniest performers as well as the best comedy fans. By offering exceptional service, high-end cocktails, and Italian cuisine, The Stand has become a hub in the Gramercy Park / Union Square area of New York City.'"
   },
   {
     "id": 6, 
@@ -115,9 +125,11 @@
     "website":"http://www.metmuseum.org",
     "telephone":"(212) 475-8592",
     "neighborhood":"Greenwich Village",
-    "tag1":"",
-    "tag2":"",
-    "tag3":"" 
+    "tag":"Legendary Iconic Jazz Intimate Cozy Sophisticated World-renowned Historic Exceptional musicians Live performances Acoustics Food and drink menu Reservations Atmosphere",
+    "blurb1":"'Especially check out Amel Larrieux and Rachelle Ferrell - their shows are breathtaking.'",
+    "blurb2":"'Lee, who was the trumpeter for Prince (I'm looking at you, Natasha L.) and Diddy's Press Play tour, did not disappoint.'",
+    "blurb3":"'When I came to the Blue Note at that day, a main musician was Chris Botti, Jazz trumpeter and composer.'",
+    "about":"'Since it opened in 1981, Blue Note Jazz Club has become a cultural institution in New York City and one of the premiere jazz clubs in the world. Blue Note strives to preserve the history of jazz, and the club is a place where progression and innovation - the foundations of jazz - are encouraged and practiced on a nightly basis. In addition to the main acts that feature the likes of Chick Corea, McCoy Tyner, Joe Lovano, John Scofield, and Chris Botti, Blue Note regularly showcases up-and-coming jazz, soul, hip-hop, R&B and funk artists. After 30 years of success, Blue Note continues to carry the torch for jazz into the 21st century in the cultural heart of New York, Greenwich Village.'"
 },
 {
   "id": 7, 
@@ -135,9 +147,11 @@
   "website":"http://www.metmuseum.org",
   "telephone":"(212) 535-7710",
   "neighborhood":"Upper East Side",
-  "tag1":"",
-  "tag2":"",
-  "tag3":"" 
+  "tag":"Iconic World-renowned Art Culture History Educational Expansive Diverse Exhibitions Collections Masterpieces Ancient artifacts Tours Audio guide Gift shop Cafe",
+  "blurb1":"'Some highlights from those areas include: The Temple of Dendur (the room its in as much as the exhibit!'",
+  "blurb2":"'Their suggested donation is $25 (which I paid), but you could literally pay $1 if you want and call it a day.'",
+  "blurb3":"'The Balcony Lounge is a sweet little stop to sit and eat after hours of walking around and the service is wonderful.'",
+  "about":"'The Metropolitan Museum of Art, commonly known as the Met, is a must-see destination for anyone in New York City, whether you're a long-time resident or a student new to the city. This world-renowned museum houses an incredible collection of over two million works of art from across the globe, spanning 5,000 years of human history. From ancient artifacts and masterpieces to contemporary art and special exhibitions, the Met offers something for everyone. As a student in NYC, the Met is also an excellent resource for research, education, and inspiration, with exceptional exhibitions, programs, and facilities that can enrich your academic and cultural experience'"
 },
 {
   "id": 8, 
@@ -155,9 +169,11 @@
   "website":"http://www.squarrelcafe.com",
   "telephone":"(718) 237-4286",
   "neighborhood":"Boerum Hill",
-  "tag1":"",
-  "tag2":"",
-  "tag3":"" 
+  "tag":"Cozy Hip Trendy Relaxed Rustic Quaint Friendly Artistic Unique Coffee Breakfast Brunch Sandwiches Vegetarian-friendly Outdoor seating",
+  "blurb1":"'I really like how friendly and fun environment this cafe presents with so many different and unique board games. Definitely would be fun for anyone who loves to play board games casually.'",
+  "blurb2":"'Overall, I loved the vibe and would've totally stay longer if I wasn't in a rush. I really like the bubble tea selection where you can mix and match tea base and fruit flavor drinks.'",
+  "blurb3":"'The boba is always perfect. A couple times I've had to wait while they make more boba because they've just run out. But the boba texture is always perfectly soft but a little chewy.'",
+  "about":"'What do you get when you cross a geek with a coffee lover? You get the perfect Squarrel Cafe regular! You can find us just around the corner from the Barclays Center amidst the hustle and bustle of our beloved Brooklyn community. We're best known for our bubble tea, coffee, and abundance of board games. Add in a snack and a few friends who love to play anything from Monopoly to The Settlers of Catan, and you're sure to have a blast with us. We also offer online ordering for delivery or pick up via our app and other popular online ordering apps. No matter how or where you enjoy your favorite Squarrel drinks, we look forward to fueling your fun.'"
 },
 {
   "id": 9, 
@@ -175,9 +191,10 @@
   "website":"http://www.nuyorican.org",
   "telephone":"(212) 780-9386",
   "neighborhood":"East Village",
-  "tag1":"",
-  "tag2":"",
-  "tag3":"" 
+  "tag":"poetry venue music arts expression culture mic live city",
+  "blurb1":"He incorporated his Hip Hop dance moves with his poetry and it was powerful, thought provoking and intense.",
+  "blurb2":"'My only piece of advice is : make sure if you are going to attend the Friday night slam that you arrive early.'",
+  "about":"'The Nuyorican presents groundbreaking works of literature, music, theater, performance art, poetry slam, hip hop, visual art and champions established as well as rising artists from every background imaginable. To find out more about the Cafe, see our individual Program pages, check out our calendar and come on down to the biggest little stage on earth.'"
 },
 {
   "id": 10, 
@@ -195,9 +212,11 @@
   "website":"http://www.thehighline.org",
   "telephone":"(212) 500-6035",
   "neighborhood":"Chelsea",
-  "tag1":"",
-  "tag2":"",
-  "tag3":"" 
+  "tag":"outdoor walk view skyline lanmark tourist greenery walkway revitalized park elevated railroad refurbished",
+  "blurb1": "'Sometimes you can find some art like graffiti; you also can see the old railroad of the train during your walk.'",
+  "blurb2":"'There is lots of nature and greenery as well as wonderful views of the city from the safety of the platforms.'",
+  "blurb3":"'It runs from Gansevoort Street in the Meatpacking District to West 34th Street, between 10th & 11th Avenues.'",
+  "about":"'The High Line is a public park built on a historic freight rail line elevated above the streets on Manhattan's West Side. It runs from Gansevoort Street in the Meatpacking District to West 34th Street, between 10th and 12th Avenues. High Line visitors can enjoy free programming for adults and families, extensive gardens, a variety of food options from local vendors and much more. Accessibility The High Line is wheelchair accessible via elevator at Gansevoort Street, 14th Street, 16th Street, 23rd Street, and 30th Street; and also at street-level at 34th Street. Wheelchair accessible restrooms are located at Gansevoort Street and 16th Street. Free tours are available from High Line docents. Visit thehighline.org/events to learn more. We also invite you to follow us on social media at @highlinenyc.'"
 }
   ]
 }

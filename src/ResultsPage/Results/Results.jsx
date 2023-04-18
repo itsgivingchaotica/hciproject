@@ -8,7 +8,7 @@ import { ResultDetails } from "./Result/ResultDetails/ResultDetails.jsx";
 import { Routes, useParams } from 'react-router-dom';
 
 
-export function Results({filteredResults,business,searchTerm,setSummaryBanner,reviewName,setReviewName,handleSetName,setZipcode,setPhoto1,setPhoto2,setPhoto3,reviewLatitude,reviewLongitude,setReviewLatitude,setReviewLongitude}){
+export function Results({filteredResults,business,searchTerm,setSummaryBanner,reviewName,setReviewName,handleSetName,setZipcode,setPhoto1,setPhoto2,setPhoto3,setAddress1,setAddress2,setWebsite,setTelephone,setNeighborhood,setTag,setBlurb1,setBlurb2,setBlurb3,setAbout,reviewLatitude,reviewLongitude,setReviewLatitude,setReviewLongitude}){
 //set the find the alias from the filteredResults that matches. then store it 
 //as setAlias(new_alias);
 
@@ -50,7 +50,9 @@ const location = {
                     {filteredResults == "" ? (<div>No results Please try a new search!<br/></div>) :(
                     filteredResults.map(result => (
                         // <Link to={`/results/${result.id}`} key={result.id} className={styles.link}>
-                            <Result key={result.id} result={result} setAlias={setAlias} alias={alias} reviewName={reviewName}setReviewName={setReviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1} setPhoto2={setPhoto2}setPhoto3={setPhoto3}setSummaryBanner={setSummaryBanner}setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude}/>
+                            <Result key={result.id} result={result} setAlias={setAlias} alias={alias} reviewName={reviewName} setReviewName={setReviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1} setPhoto2={setPhoto2} setPhoto3={setPhoto3} 
+                            setAddress1={setAddress1} setAddress2={setAddress2} setWebsite={setWebsite} setTelephone={setTelephone} setNeighborhood={setNeighborhood} setTag={setTag} setBlurb1={setBlurb1} setBlurb2={setBlurb2} setBlurb3={setBlurb3} setAbout={setAbout}
+                            setSummaryBanner={setSummaryBanner} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude}/>
                         // {/* </Link>     */}
                     )))}
                 </div>
