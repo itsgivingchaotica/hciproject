@@ -22,7 +22,8 @@ function Navbar({setFilteredResults,setSummaryBanner}) {
       <Link to="/">InfiniteNYC</Link>
       {/* <a href="/">InfiniteNYC</a> */}
       </h1>
-      <Link id="logo" to="/">∞∞</Link>
+      {/*<Link id="logo" to="/">∞∞</Link>*/}
+      <a id="logo" href="/">∞∞</a>
       <Link to="/survey" className="survey-link">Survey</Link>
       <Link to="/results/" className="explore-link" onClick={() => handleResultsLinkClick()}>Explore</Link>
       <Link to="/resources-page" className="resources-link">Helplines</Link>
