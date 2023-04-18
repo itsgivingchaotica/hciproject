@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'
 import { ResultDetails } from './ResultDetails/ResultDetails.jsx'
 
-export function Result({result, results, reviewName, setReviewName,setZipcode,setPhoto1,setSummaryBanner,setReviewLatitude,setReviewLongitude}){
+export function Result({result, results, reviewName, setReviewName,setZipcode,setPhoto1,setPhoto2,setPhoto3, setSummaryBanner,setReviewLatitude,setReviewLongitude}){
     console.log("reviewName in Result:", result.name);
     console.log(typeof result.name);
     const resultName = result.name;
@@ -56,11 +56,13 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
     
     }
 
-    const handleSetName = (nombre,zip,photo1,latitude,longitude) => {
+    const handleSetName = (nombre,zip,photo1,photo2,photo3,latitude,longitude) => {
         setReviewName(nombre);
         console.log(nombre + " " + photo1 + " " + zip + " is hte handledrs")
         setZipcode(zip);
         setPhoto1(photo1);
+        setPhoto2(photo2);
+        setPhoto3(photo3);
         console.log(latitude);
         console.log(longitude + " were the lat and long ");
         setReviewLatitude(latitude);
@@ -82,7 +84,7 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
                             <LocationRating rating={result.rating}/>
                         </Card.Header>
                                 <Card.Body>
-                                    <Card.Title className ={styles.share}> {result.name} <br/> <Link to={`/results/${result.id}`} onClick={() => handleSetName(result.name,result.zipcode,result.photo1,result.latitude,result.longitude)}><FontAwesomeIcon icon={faAnglesRight}/></Link>
+                                    <Card.Title className ={styles.share}> {result.name} <br/> <Link to={`/results/${result.id}`} onClick={() => handleSetName(result.name,result.zipcode,result.photo1,result.photo2,result.photo3,result.latitude,result.longitude)}><FontAwesomeIcon icon={faAnglesRight}/></Link>
                                     </Card.Title>
                                     {/* <Routes>
                                     <Route path="/results/:id" element={<ResultDetails result={result}/>} />

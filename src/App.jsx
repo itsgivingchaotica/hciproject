@@ -11,7 +11,10 @@ function App() {
   const [results, setResults] = useState([]);
 
   const [reviewName, setReviewName] = useState('');
-  const [photoOne, setPhoto1] = useState('');
+  const [photoOne, setPhoto1] = useState("");
+  const [photoTwo, setPhoto2] = useState("");
+  const [photoThree, setPhoto3] = useState("");
+  
   const [zipCode, setZipcode] = useState('');
   const [reviewLatitude,setReviewLatitude] = useState('40.63124780572077');
   const [reviewLongitude,setReviewLongitude]=useState('-73.95238020363617');
@@ -41,7 +44,8 @@ function App() {
           zipcode: result.zipcode,
           rating: result.rating,
           photo1: result.photo1,
-          photo2: result.photo2
+          photo2: result.photo2,
+          photo3: result.photo3,
         }));
         setResults(extractedData);
         console.log(" helloooo " + extractedData);
@@ -70,8 +74,9 @@ function App() {
           </div>
       </div>
       <Routes>
-        <Route path="*" element={<ResultsPage results={results} setReviewName={setReviewName} reviewName={reviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1}filteredResults={filteredResults}searchTerm={searchTerm}exact summaryBanner={summaryBanner}setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude}/>} />
-        <Route path="/results/:id/" element={<ResultDetails reviewName={reviewName} photoOne={photoOne} zipCode={zipCode} setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude} directionMap={directionMap}setDirectionMap={setDirectionMap}/>}/>
+        <Route path="*" element={<ResultsPage results={results} setReviewName={setReviewName} reviewName={reviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1}setPhoto2={setPhoto2}setPhoto3={setPhoto3}filteredResults={filteredResults}searchTerm={searchTerm}exact summaryBanner={summaryBanner}setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude}/>} />
+        
+        <Route path="/results/:id/" element={<ResultDetails reviewName={reviewName} photoOne={photoOne} photoTwo={photoTwo} photoThree={photoThree} zipCode={zipCode} setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude} directionMap={directionMap}setDirectionMap={setDirectionMap}/>}/>
       </Routes>
     </div>
 
