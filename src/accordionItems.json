@@ -1,0 +1,47 @@
+[
+    {
+        "key": "0",
+        "header": "ANAD - Eating Disorders Helpline",
+        "body": "Contact ANAD at 1(888)-375-7767"
+    },
+    {
+        "key": "1",
+        "header": "Community Health Access to Addiction and Mental Healthcare Project (CHAMP)",
+        "body": "Contact CHAMP at 888-614-5400 or ombuds@oasas.ny.gov"
+    },
+    {
+        "key": "2",
+        "header": "Crisis Text Line",
+        "body": "Text HOME to 741741 to connect to a crisis counselor"
+    },
+    {
+        "key": "3",
+        "header": "National Alliance on Mental Illness",
+        "body": "Call or text the NAMI Helpline at 800-950-6264"
+    },   
+    {
+        "key": "4",
+        "header": "National Crisis Hotline",
+        "body": "Call 211 for mental health and substance use resources and services"
+    },
+    {
+        "key": "5",
+        "header": "National Domestic Violence Hotline",
+        "body": "Call 1-800-662-SAFE (7233) for domestic violence victims"
+    },  
+    {
+        "key": "6",
+        "header": "National Eating Disorders Association Helpline (NEDA)",
+        "body": "Call or Text (800)931-2237"
+    },  
+    {
+        "key": "7",
+        "header": "Substance Abuse and Mental Health Services Administration National Helpline (SAMHSA)",
+        "body": "Call 1-800-662-HELP (4357) for individuals and family members facing mental and/or substance use disorders"
+    },  
+    {
+        "key": "8",
+        "header": "Suicide and Crisis Lifeline",
+        "body": "Call 988 when feeling suicidal"
+    }                    
+]

@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import ResultsPage from './ResultsPage/ResultsPage.jsx';
 import { ResultDetails } from "./ResultsPage/Results/Result/ResultDetails/ResultDetails.jsx"
@@ -5,6 +6,18 @@ import { HashRouter as Router, Routes, Route, useParams } from 'react-router-dom
 import './App.css';
 import { SearchBar } from './ResultsPage/SearchBar/SearchBar.jsx'
 import { Banner } from './ResultsPage/Results/Banner.jsx'
+
+// import React, { useState } from 'react'
+// import './App.css'
+
+
+import Navbar from "./components/navbar/Navbar.jsx";
+import ResourcesPage from "./ResourcesPage";
+import HomePage from "./HomePage";
+
+// import {Routes, Route} from "react-router-dom";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import accordionItems from "./accordionItems.json";
 
 function App() {
 
@@ -60,7 +73,9 @@ function App() {
 
   console.log(results);
   return (
+// <<<<<<< HEAD
     <div>
+      <Navbar />
       <div>
         <div className="formatSearch">
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} filteredResults={filteredResults} setFilteredResults={setFilteredResults} options={options} results={results} setSummaryBanner={setSummaryBanner}setLocationInquiry={setLocationInquiry}/>
@@ -72,7 +87,16 @@ function App() {
       <Routes>
         <Route path="*" element={<ResultsPage results={results} setReviewName={setReviewName} reviewName={reviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1}filteredResults={filteredResults}searchTerm={searchTerm}exact summaryBanner={summaryBanner}setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude}/>} />
         <Route path="/results/:id/" element={<ResultDetails reviewName={reviewName} photoOne={photoOne} zipCode={zipCode} setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude} directionMap={directionMap}setDirectionMap={setDirectionMap}/>}/>
+        <Route path="/" element={<HomePage />}/>
+        <Route path="/resources-page" element={<ResourcesPage accordionItems={accordionItems}/>}/>
       </Routes>
+{/* ======= */}
+    {/* <div className="App"> */}
+      {/* <Navbar /> */}
+
+
+
+{/* >>>>>>> 23328df (Home and resource page commit) */}
     </div>
 
   );

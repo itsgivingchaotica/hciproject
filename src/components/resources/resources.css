@@ -1,0 +1,68 @@
+.resources-container{
+    height: fit-content;
+    padding: 2rem 3rem 3rem;
+    color: var(--color-primary);
+}
+
+.resources-prompt{
+    font-size: 1.6rem;
+    margin: 2.5rem 2rem;
+}
+
+.resources-questions{
+    font-size: 2.2rem;
+    text-align: center;
+    margin: 4rem 2rem;
+    color: var(--color-secondary);
+}
+
+.resources-button{
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    text-decoration: none;
+    background-color: var(--color-primary);
+    border: solid;
+    border-color: var(--color-secondary);
+    box-shadow: 0 3px 3px 0 var(--color-secondary);
+    padding: 1.2rem;
+    font-weight: 900;
+    font-size: 1.4rem;
+    text-align: center;
+    width: 25%;
+    display: inline-block;
+    position: relative;
+    /* left: 38%; */
+    border-radius: 1.2rem;
+}    
+
+.resources-button:hover{
+    background-color: white;
+    color: var(--color-primary);
+    box-shadow: none;
+    width: 30%;
+    /* left: 35.5%; */
+}
+
+/***********Media queries (tablets, medium devices) *************/
+@media screen and (max-width: 1024px){
+    a.resources-button{
+        width: 35%;
+        /* left: 32%; */
+    }
+
+    a.resources-button:hover{
+        width: 45%;
+        /* left: 27%; */
+    }
+}
+@media screen and (max-width:600px){
+    a.resources-button{
+        width: 40%;
+        /* left: 32%; */
+    }
+
+    a.resources-button:hover{
+        width: 45%;
+        /* left: 29%; */
+    }
+}    

@@ -1,3 +1,43 @@
-:root{
+
+/* :root{
     display: grid;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  list-style: none;
+  /* padding: 0;
+  margin: 0;
+  border: 0; */
 }
+
+:root{
+  /* --color-secondary: #65b4be; */
+  --color-primary: cadetblue;
+
+  /* --color-primary: rgb(95, 137, 160); */
+  /* --color-secondary: cadetblue; */
+  --color-secondary: black;
+
+  --transition: all 400ms ease
+}
+
+html {
+  scroll-behavior: smooth;
+
+}
+/* ::webkit-scrollbar {
+  display: none;
+} */
+
+body {
+  background-color: white;
+  /* font-family: 'Mulish', sans-serif; */
+  font-family: 'Poppins', sans-serif;
+}
+
+:hover{
+  transition: var(--transition);
+}
+
