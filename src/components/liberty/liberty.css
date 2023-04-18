@@ -1,0 +1,13 @@
+/* .liberty-container{
+    text-align: center;
+    margin-top: 1rem;
+    position:relative;
+    bottom: 3rem;
+} */
+
+.liberty-image{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 1.2rem;
+}
