@@ -1,8 +1,11 @@
 {
+  "homepage": "http://itsgivingchaotica.github.io/hciproject",
   "name": "hci-group-project",
   "private": true,
   "version": "0.0.0",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -14,8 +17,10 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@googlemaps/react-wrapper": "^1.1.35",
     "@react-google-maps/api": "^2.18.1",
+    "bootstrap": "^5.2.3",
     "cors-anywhere": "^0.4.4",
     "dotenv": "^16.0.3",
+    "esbuild": "^0.17.17",
     "fuse.js": "^6.6.2",
     "google-map-react": "^2.2.0",
     "query-string": "^8.1.0",
@@ -25,7 +30,8 @@
     "react-dom": "^18.2.0",
     "react-error-overlay": "^6.0.11",
     "react-rating": "^2.0.5",
-    "react-router-dom": "^6.10.0"
+    "react-router-dom": "^6.10.0",
+    "swiper": "^9.2.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

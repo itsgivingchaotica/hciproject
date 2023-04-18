@@ -96,7 +96,7 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
                                     <Route path="/results/:id" element={<ResultDetails result={result}/>} />
                                     </Routes> */}
                                 <Card.Text>
-                                {result.zipcode}
+                                {result.neighborhood}
                                 </Card.Text>
                                 </Card.Body>
                     </Card>

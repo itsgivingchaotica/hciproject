@@ -1,0 +1,127 @@
+nav{
+    /* background-color: #49b884; */
+    /* background-color: cadetblue; */
+    background-color: var(--color-primary);
+    height: 4rem;
+    border-bottom: solid;
+    /* border-color: #49b884; */
+    border-color: var(--color-secondary);
+    border-width: 0.2rem;
+    color: white;
+}
+
+.title{
+    font-size: 2.5rem;
+    position: absolute;
+    /* bottom: -17.5%; */
+    left: 2.5%;
+    display: inline;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.title a{
+    color: white;
+    text-decoration: none;
+}
+
+.title a:hover{
+    color: var(--color-secondary);
+    cursor:pointer;
+}
+
+#logo{
+    font-weight: 900;
+    font-size: 5rem;
+    color: white;
+    text-decoration: none;
+    /* position: relative;
+    left: 29%; */
+    position: absolute;
+    left: 46%;
+    top: -0.5%;
+    /* text-align: center; */
+    display: inline;
+    /* bottom: 24%; */
+}
+
+#logo:hover{
+    color: var(--color-secondary);
+    cursor: pointer; 
+}
+
+.resources-link{
+    display: inline;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 2.5%;
+    /* top: 2.5%; */
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.resources-link:hover{
+    color: var(--color-secondary);
+    cursor: pointer; 
+}
+
+.explore-link{
+    display: inline;
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: 700;
+    /* top: 2.5%; */
+    right: 13.7%;
+    color: white;
+    text-decoration: none;
+}
+
+.explore-link:hover{
+    color: var(--color-secondary);
+    cursor: pointer; 
+}
+
+.survey-link{
+    display: inline;
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: 700;
+    /* top: 2.5%; */
+    right: 23%;
+    color: white;
+    text-decoration: none;
+}
+
+.survey-link:hover{
+    color: var(--color-secondary);
+    cursor: pointer; 
+}
+
+/* a:hover{ 
+    color: var(--color-secondary);
+    cursor: pointer;    
+} */
+
+/***********Media queries (tablets, medium devices) *************/
+@media screen and (max-width: 1024px){
+    .explore-link{
+        /* visibility: hidden; */
+        display: none;
+    }
+
+    .resources-link{
+        /* visibility: hidden; */
+        display: none;
+    }
+
+    .survey-link{
+        /* visibility: hidden; */
+        display: none;
+    }
+
+    #logo{
+        left: 76%;
+    }
+}    

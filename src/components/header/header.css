@@ -1,0 +1,191 @@
+.container-header{
+    padding: 2.2rem 2.2rem 0 2.2rem;
+    color: var(--color-primary);
+    /* background-image: url("https://ih1.redbubble.net/image.479303024.4758/st,small,507x507-pad,600x600,f8f8f8.u2.jpg"); */
+    height: fit-content;
+    display: block;
+    margin-bottom: -9rem;
+}
+
+.header{
+    font-size: 3rem;
+    text-align:center;
+    margin-bottom: 4rem;
+    font-weight: 600;
+}
+
+.header:hover{
+    font-size: 3.1rem;
+}
+
+.cta{
+    display: inline-block;
+    width: 50%;
+}
+
+.cta-text{
+    /* color: #49b884; */
+    color: var(--color-primary);
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.places{
+    font-weight: 700;
+    font-size: 1.2rem;
+    position: relative;
+    display: inline-block;
+    padding: 3% 6%;
+    /* left: 20%; */
+    color: var(--color-secondary);
+}
+
+.cta-btn{
+    text-decoration: none;
+    font-family: 'Mulish', sans-serif;
+    border: solid;
+    padding: 0.9rem;
+    font-size: 1.4rem;
+    border-radius:1rem;
+    border-width: 0.2rem;
+    background-color: var(--color-primary);
+    border-color: var(--color-secondary);
+    color:white;
+    font-weight: 900;
+    position: relative;
+    /* left: 10%; */
+    margin-top: 2rem;
+    width: 50%;
+    box-shadow: 0 3px 3px 0 var(--color-secondary);
+    display:inline-block;
+    text-align: center;
+}
+
+a.cta-btn:hover{
+    background-color:white;
+    color: var(--color-primary);
+    cursor: pointer;
+    width: 70%;
+    /* left: 14%; */
+    box-shadow: none;
+}
+
+.scenery{
+    display: inline-block;
+    width: 50%;
+}
+
+.liberty-container{
+    margin-top: 3rem;
+    text-align: center;
+    position:relative;
+    bottom: 3rem;
+}
+
+.liberty-image{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 1.2rem;
+}
+
+.liberty{
+    position: absolute;
+    bottom: 2rem;
+}
+
+.city-image{
+    position: relative;
+    /* left: 7rem; */
+    margin-bottom: 1rem;
+    border-radius: 1.2rem;
+    transition: transform .5s ease-in-out;
+    border: solid;
+    border-color: var(--color-secondary);
+    width: 75%;
+    bottom: 10rem;
+}
+
+.bridge-image{
+    position: relative;
+    left: 7rem;
+    margin-bottom: 1rem;
+    border-radius: 1.2rem;
+    transition: transform .5s ease-in-out;
+    border: solid;
+    border-color: var(--color-secondary);
+    width: 75%;
+    display: none
+}
+
+.city-image:hover, .bridge-image:hover{
+    transform: rotate(20deg);
+    transition: transform .5s ease-in-out;
+}
+
+/***********Media queries (tablets, medium devices) *************/
+@media screen and (max-width: 920px){ /*1024px is tablets*/
+    /* .places{
+        left:8%;
+    } */
+
+    .cta-text{
+        font-size: 1.2rem;
+    }
+
+    .bridge-image{
+        display: block;
+        bottom: 3rem;
+    }
+
+    .city-image{
+        bottom: 3rem;
+    }
+
+    .city-image, .bridge-image{
+        width: 60%;
+    }
+
+    .header{
+        font-size: 2.5rem;
+    }
+
+    .header:hover{
+        font-size: 2.5rem;
+    }
+
+}
+@media screen and (max-width:600px){
+    .header{
+        font-size: 2.5rem;
+    }
+
+    .header:hover{
+        font-size: 2.5rem;
+    }
+
+    .scenery{
+        display: block;
+        width: 100%;
+    }
+
+    .cta{
+        display: block;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .cta-btn{
+        margin-bottom: 2rem;
+    }
+    .city-image, .bridge-image{
+        display: inline-block;
+        width: 80%;
+        margin: 2rem;
+        left: 4%;
+    }    
+
+    .places{
+        left: 15%;
+    }
+}    

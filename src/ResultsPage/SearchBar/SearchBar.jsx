@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Fuse from 'fuse.js';
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -10,10 +9,10 @@ import { Typeahead } from 'react-bootstrap-typeahead';
 import { Link, Routes, Route} from 'react-router-dom'
 import styles from './searchBar.module.css';
 
-export function SearchBar({results,searchTerm,setSearchTerm,options,filteredResults,setFilteredResults,setSummaryBanner,setLocationInquiry}){
+export function SearchBar({setZip,handleSearchEngine,daneighborhood,setDaNeighborhood,filterType,setFilterType, userResult,results,searchTerm,setSearchTerm,options,filteredResults,setFilteredResults,setSummaryBanner,setLocationInquiry,zipCodes,setZipCodes}){
 
-  const [zipCodes, setZipCodes] = useState([]);
-  const [zip,setZip] = useState("");
+  // const [zipCodes, setZipCodes] = useState([]);
+  // const [zip,setZip] = useState("");
   
   useEffect(() => {
     fetch('/results.json')
@@ -35,7 +34,7 @@ export function SearchBar({results,searchTerm,setSearchTerm,options,filteredResu
         >
             <Form.Control
             className={styles.forms}
-                placeholder={neighborhood}
+                placeholder={daneighborhood}
                 aria-label="Default"
                 aria-describedby="inputGroup-sizing-default"
             />
@@ -70,18 +69,14 @@ export function SearchBar({results,searchTerm,setSearchTerm,options,filteredResu
           );
         },
       );
-
-    const [filterType,setFilterType] = useState("near");
-
-    const [neighborhood,setNeighborhood] = useState("Prospect Park");
-
+        
     const handleOptionChange = () => {
       const newFilterType = filterType === "near" ? "in" : "near";
       setFilterType(newFilterType);
     }
 
     const handleOptionSelect = (eventKey) => {
-        setNeighborhood(eventKey);
+        setDaNeighborhood(eventKey);
         console.log(eventKey);
     }
 
@@ -93,28 +88,30 @@ export function SearchBar({results,searchTerm,setSearchTerm,options,filteredResu
     const handleZipChange = (e) => {
       setZip(e.target.value);
       console.log(zip);
-    }
-
-    const handleSearchEngine = (e) => {
-      let inquiry;
-      if (filterType == "near"){
-        inquiry = `${searchTerm} ${zip}`;
-      }
-      else {
-        inquiry = `${searchTerm} ${neighborhood}`;
-      }
-      let ban = searchTerm;
-      setSummaryBanner(ban);
-      // let inquiry = `${searchTerm} ${neighborhood} ${zip}`;
-      setSearchTerm(inquiry); 
-      setLocationInquiry(inquiry);
-      console.log("THE INQUIRY: " + inquiry);
-      const fuse = new Fuse(results,options);
-      const frs = fuse.search(searchTerm).map((result) => result.item);
-      setFilteredResults(frs);
-      console.log("filteredresults: " + filteredResults);
-      setSearchTerm(ban);
-    }
+    } // I emailed the Zoom link
+    // const handleSearchEngine = (e) => {
+    //   let inquiry;
+    //   if (userResult != ""){
+    //     setSearchTerm(userResult);
+    //   }
+    //   if (filterType == "near"){
+    //     inquiry = `${searchTerm} ${zip}`;
+    //   }
+    //   else {
+    //     inquiry = `${searchTerm} ${neighborhood}`;
+    //   }
+    //   let ban = searchTerm;
+    //   setSummaryBanner(ban);
+    //   // let inquiry = `${searchTerm} ${neighborhood} ${zip}`;
+    //   setSearchTerm(inquiry); 
+    //   setLocationInquiry(inquiry);
+    //   console.log("THE INQUIRY: " + inquiry);
+    //   const fuse = new Fuse(results,options);
+    //   const frs = fuse.search(searchTerm).map((result) => result.item);
+    //   setFilteredResults(frs);
+    //   console.log("filteredresults: " + filteredResults);
+    //   setSearchTerm(ban);
+    // }
     
     console.log(filteredResults);
 
@@ -204,7 +201,7 @@ export function SearchBar({results,searchTerm,setSearchTerm,options,filteredResu
         {filterType === 'in' && (
               <Dropdown onSelect={handleOptionSelect}>
               <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
-                {neighborhood}
+                {daneighborhood}
               </Dropdown.Toggle>
               <Dropdown.Menu as={CustomMenu} style={{ maxHeight: "200px", overflowY: "scroll" }}> 
                 {neighborhoodList.map(_neighborhood => (

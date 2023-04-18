@@ -1,16 +1,22 @@
-import React, { useEffect, useState } from 'react';
-// import ResultsPage from './ResultsPage/ResultsPage.jsx';
+
+import React, { useEffect, useState} from 'react';
 import { ResultDetails } from "./ResultsPage/Results/Result/ResultDetails/ResultDetails.jsx"
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { SearchBar } from './ResultsPage/SearchBar/SearchBar.jsx'
 import { Banner } from './ResultsPage/Results/Banner.jsx'
 import { Results } from './ResultsPage/Results/Results.jsx';
+import QuestionsPage  from './questions/questions.jsx'
+import Fuse from 'fuse.js';
+import Navbar from "./components/navbar/Navbar.jsx";
+import ResourcesPage from "./ResourcesPage";
+import HomePage from "./HomePage";
+import accordionItems from "./accordionItems.json";
 
 function App() {
 
   const [results, setResults] = useState([]);
-
+   const [userResult, setUserResult] = useState("Squarrel Cafe");
   const [reviewName, setReviewName] = useState('');
   const [photoOne, setPhoto1] = useState("");
   const [photoTwo, setPhoto2] = useState("");
@@ -27,9 +33,10 @@ function App() {
   const [about,setAbout] = useState("");
   const [zipCode, setZipcode] = useState('');
   const [reviewLatitude,setReviewLatitude] = useState('40.63124780572077');
-  const [reviewLongitude,setReviewLongitude]=useState('-73.95238020363617');
+  const [reviewLongitude,setReviewLongitude]=useState('-73.95238020363617')
+  const [filterType,setFilterType] = useState("near");
 
-  const [directionMap,setDirectionMap] = useState(/** @typeof google.maps.Map */(null)); 
+    const [daneighborhood,setDaNeighborhood] = useState("Prospect Park");
 
   //
   function handleSetName(aname){
@@ -40,7 +47,9 @@ function App() {
 //     setReviewName(reviewName);
 //     console.log(reviewame + " handled");
 // }
+const handleUserResult = () => {
 
+}
   useEffect(() => {
     fetch('/results.json')
       .then(response => response.json())
@@ -83,24 +92,78 @@ function App() {
       minMatchCharLength: 3,
       keys: ["name","alias","zipcode","latitude","longitude","about","blurb1","blurb2","blurb3","tag","neighborhood","telephone","website","Address1","Address2"]
   }
+  const [zipCodes, setZipCodes] = useState([]);
+  const [zip,setZip] = useState("");
+
+const handleQuizResult = (userResult) => {
+  if (userResult != "") {
+     const fuse = new Fuse(results,options);
+        const frs = fuse.search(userResult).map((result) => result.item);
+        setFilteredResults(frs);
+        console.log("filteredresults: " + filteredResults);
+        setSearchTerm("your result");
+  }
+}
+const handleSearchEngine = () => {
+      if (filterType == "near"){
+        let inquiry = `${searchTerm} ${zip}`;
+        let ban = searchTerm;
+        setSummaryBanner(ban);
+        setSearchTerm(inquiry); 
+        setLocationInquiry(inquiry);
+        const fuse = new Fuse(results,options);
+        const frs = fuse.search(searchTerm).map((result) => result.item);
+        setFilteredResults(frs);
+        setSearchTerm(ban);
+      }
+      if (filterType == "in"){
+        inquiry = `${searchTerm} ${neighborhood}`;
+        let ban = searchTerm;
+        setSummaryBanner(ban);
+        let inquiry = `${searchTerm} ${neighborhood} ${zip}`;
+        setSearchTerm(inquiry); 
+        setLocationInquiry(inquiry);
+      console.log("THE INQUIRY: " + inquiry);
+        const fuse = new Fuse(results,options);
+        const frs = fuse.search(searchTerm).map((result) => result.item);
+        setFilteredResults(frs);
+        console.log("filteredresults: " + filteredResults);
+        setSearchTerm(ban);
+      }
+      
+    }
 
   console.log(results);
   return (
     <div>
+      <Navbar setFilteredResults={setFilteredResults}setSummaryBanner={setSummaryBanner}/>
       <div>
         <div className="formatSearch">
-            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} filteredResults={filteredResults} setFilteredResults={setFilteredResults} options={options} results={results} setSummaryBanner={setSummaryBanner}setLocationInquiry={setLocationInquiry}/>
+            <SearchBar filterType={filterType} setFilterType={setFilterType} daneighborhood={daneighborhood} setDaNeighborhood={setDaNeighborhood} handleSearchEngine={handleSearchEngine} zipCodes={zipCodes} setZipCodes={setZipCodes} zip={zip} setZip={setZip} userResult={userResult} searchTerm={searchTerm} setSearchTerm={setSearchTerm} filteredResults={filteredResults} setFilteredResults={setFilteredResults} options={options} results={results} setSummaryBanner={setSummaryBanner}setLocationInquiry={setLocationInquiry}/>
           </div>
-          <div className="adjustBanner">
-          <Banner summaryBanner={summaryBanner}searchTerm={searchTerm} locationInquiry={locationInquiry}/>
-          </div>
+          {}
       </div>
       <Routes>
         {/* <Route path="*" element={<ResultsPage results={results} setReviewName={setReviewName} reviewName={reviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1}setPhoto2={setPhoto2}setPhoto3={setPhoto3}filteredResults={filteredResults}searchTerm={searchTerm}exact summaryBanner={summaryBanner}setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude}/>} /> */}
-        <Route path="/results/" element ={<Results filteredResults={filteredResults} searchTerm={searchTerm} summaryBanner={summaryBanner} results={results} reviewName={reviewName} setReviewName={setReviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1} setPhoto2={setPhoto2} setPhoto3={setPhoto3} setAddress1={setAddress1} setAddress2={setAddress2} setWebsite={setWebsite} setTelephone={setTelephone} setNeighborhood={setNeighborhood} setTag={setTag} setBlurb1={setBlurb1} setBlurb2={setBlurb2} setBlurb3={setBlurb3} setAbout={setAbout} setSummaryBanner={setSummaryBanner} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude} reviewLatitude={reviewLatitude} reviewLongitude={reviewLongitude}/>}/>
+        <Route path="/" element={<HomePage />}/>
+        <Route path="/survey/*" element={<QuestionsPage setUserResult={setUserResult} userResult={userResult} handleQuizResult={handleQuizResult}/>}/>
 
-        <Route path="/results/:id/" element={<ResultDetails reviewName={reviewName} photoOne={photoOne} photoTwo={photoTwo} photoThree={photoThree} zipCode={zipCode} Address1={Address1} Address2={Address2} website={website} telephone={telephone} neighborhood={neighborhood} tag={tag} blurb1={blurb1} blurb2={blurb2}blurb3={blurb3} about={about} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude} reviewLatitude={reviewLatitude} reviewLongitude={reviewLongitude} directionMap={directionMap} setDirectionMap={setDirectionMap}/>}/>
+        <Route path="/results/" element ={<Results zip={zip}daneighborhood={daneighborhood}userResult={userResult} filteredResults={filteredResults} searchTerm={searchTerm} summaryBanner={summaryBanner} results={results} reviewName={reviewName} setReviewName={setReviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1} setPhoto2={setPhoto2} setPhoto3={setPhoto3} setAddress1={setAddress1} setAddress2={setAddress2} setWebsite={setWebsite} setTelephone={setTelephone} setNeighborhood={setNeighborhood} setTag={setTag} setBlurb1={setBlurb1} setBlurb2={setBlurb2} setBlurb3={setBlurb3} setAbout={setAbout} setSummaryBanner={setSummaryBanner} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude} reviewLatitude={reviewLatitude} reviewLongitude={reviewLongitude} locationInquiry={locationInquiry}/>}/>
+
+        <Route path="/results/:id/" element={<ResultDetails reviewName={reviewName} photoOne={photoOne} photoTwo={photoTwo} photoThree={photoThree} zipCode={zipCode} Address1={Address1} Address2={Address2} website={website} telephone={telephone} neighborhood={neighborhood} tag={tag} blurb1={blurb1} blurb2={blurb2}blurb3={blurb3} about={about} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude} reviewLatitude={reviewLatitude} reviewLongitude={reviewLongitude} />}/>
+
+        {/* <Route path="*" element={<ResultsPage results={results} setReviewName={setReviewName} reviewName={reviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1}filteredResults={filteredResults}searchTerm={searchTerm}exact summaryBanner={summaryBanner}setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude}/>} />
+         */}
+        <Route path="/results/:id/" element={<ResultDetails reviewName={reviewName} photoOne={photoOne} zipCode={zipCode} setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude}/>}/>
+        <Route path="/resources-page" element={<ResourcesPage accordionItems={accordionItems}/>}/>
       </Routes>
+{/* ======= */}
+    {/* <div className="App"> */}
+      {/* <Navbar /> */}
+
+
+
+{/* >>>>>>> 23328df (Home and resource page commit) */}
     </div>
 
   );

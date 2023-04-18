@@ -1,54 +1,60 @@
-import ResultsPage from './ResultsPage/ResultsPage.jsx';
-import { ResultDetails } from "./ResultsPage/Results/Result/ResultDetails/ResultDetails.jsx"
+// import { ResultsPage } from './ResultsPage/ResultsPage.jsx';
+// import { ResultDetails } from "./ResultsPage/Results/Result/ResultDetails/ResultDetails.jsx"
 import { HashRouter as Router, Routes, Route, useParams } from 'react-router-dom'; // testing out these top three imports for now
-import logo from './infinite-health-4.png';
 import { questionList, resultList } from './question-data.js';
 import React from 'react';
 import { useEffect, useState } from "react";
 import './questions.css';
 import pinkloading from './pinkloading.gif'
-import "./navbar.css"; // FOR THIS LINE, make sure navbar css file is imported from Andrea's work!
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+// import "./navbar.css"; // FOR THIS LINE, make sure navbar css file is imported from Andrea's work!
 
-export default function QuestionsPage() {
+export default function QuestionsPage({setUserResult,handleQuizResult,userResult}) {
   document.body.style = 'background: #f3daf0;';
   const [index, setIndex] = useState(0); // STATE LINE
+  const [shouldRedirect, setShouldRedirect] = useState(false);
   const [userAnswers, setUserAnswers] = useState("");
-  //const [userResult, setUserResult] = useState("Squarrel Cafe");
+let question = questionList[index];
+  let results = resultList;
+  useEffect(() => {
+    if (index >= 4) {
+      setUserResult(results.get(userAnswers));
+      handleQuizResult(userResult);
+      setTimeout(() => { window.location.href = "#/results/"; }, 2000); 
+    }
+  }, [index, results, userAnswers,userResult]);
+
   function handleClick({ans}) {
     setUserAnswers(userAnswers + ans);
     setIndex(index + 1);
   }
 
-  function Navbar() {
-    const [activeNav, setActiveNav] = useState("#header");
+  // function Navbar() {
+  //   const [activeNav, setActiveNav] = useState("#header");
   
   
-    return (
-      <nav>
-        <h1 className="title">
-        {/* <Link to="/">InfiniteNYC </Link> */}
-        <a href="/">InfiniteNYC</a>
-        </h1>
-        <a id="logo" href="/">∞∞</a>
-        <a className="survey-link" href="/">Survey</a>
-        <a className="explore-link" href="/">Explore</a>
-        <a className="resources-link" href="/resources-page">Helplines</a>
+  //   return (
+  //     <nav>
+  //       <h1 className="title">
+  //       {/* <Link to="/">InfiniteNYC </Link> */}
+  //       <a href="/">InfiniteNYC</a>
+  //       </h1>
+  //       <a id="logo" href="/">∞∞</a>
+  //       <a className="survey-link" href="/">Survey</a>
+  //       <a className="explore-link" href="/">Explore</a>
+  //       <a className="resources-link" href="/resources-page">Helplines</a>
   
   
-      </nav>
-    )
-  }
+  //     </nav>
+  //   )
+  // }
 
-  function Dropdown() {
-    return (
-      <button>--Menu--</button>
-    )
-  }
-
-  let question = questionList[index];
-  let results = resultList;
-  let userResult = results.get(userAnswers);
+  // function Dropdown() {
+  //   return (
+  //     <button>--Menu--</button>
+  //   )
+  // }
+  //single user result to redirect
+  // let userResult = results.get(userAnswers);
 
   function QuestionBox() {
     let answers = [question.option1, question.option2, question.option3]
@@ -79,14 +85,15 @@ export default function QuestionsPage() {
   if (index < 4) {
     return (
       <div className="myApp">
-        <Navbar/>
+        {/* <Navbar/> */}
         {/* <h1>HELLO AND WELCOME TO THE QUESTIONS PAGE!!!</h1> */}
         <QuestionBox index={index} setIndex={setIndex}/> {/* Updated with STATE LINE */}
       </div>
     )
   }
-  else {
-    setTimeout(() => { window.location.href = "http://www.w3schools.com"; }, 2000); // THIS LINE REDIRECTS TO THE NEXT PAGE!!!
+    
+    
+    // THIS LINE REDIRECTS TO THE NEXT PAGE!!!
     /* On the above line, replace window.location.href = "http://www.w3schools.com"; with the code to move to the results page.
        If a there is a function to move to the next page instead of simple code, replace () => { window.location.href = "http://www.w3schools.com"; } with the function. */
     return (
@@ -97,4 +104,3 @@ export default function QuestionsPage() {
       </div>
     )
   }
-}

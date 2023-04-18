@@ -1,0 +1,48 @@
+.carousel-container{
+    display: block;
+    height: fit-content;
+    background-color: var(--color-primary);
+    margin-top: 3rem;
+    padding-bottom: 12rem;
+    margin-bottom: -3.2rem;
+}
+
+.carousel{
+    color:white;
+    cursor: grab;
+}
+
+.testimonial{
+    padding: 4rem 4rem 3rem 4rem;
+    margin-top: 4rem;
+}
+
+.testimonial-image{
+    position: relative;
+    text-align: center;
+    /* left: 7rem; */
+    border: solid;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+    width: 100px;
+    height: 112px;
+}
+
+.testimonial-person{
+    padding: 0 4rem;
+}
+
+:root {
+    --swiper-navigation-color: #white;
+    --swiper-pagination-color: white;
+}
+
+/***********Media queries (tablets, medium devices) *************/
+@media screen and (max-width: 1024px){
+
+}
+@media screen and (max-width:600px){
+    .testimonial{
+        font-size: 1.2rem;
+    }
+}    
