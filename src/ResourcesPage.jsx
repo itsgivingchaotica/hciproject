@@ -17,7 +17,7 @@ function ResourcesPage({accordionItems}){
 
             {accordionItems.map((accordionItem) => (
             <Accordion.Item eventKey={accordionItem.key} className="item">
-                <Accordion.Header><h2 className="helpline-title">{accordionItem.header}</h2></Accordion.Header>
+                <Accordion.Header className="accordion-header"><h2 className="helpline-title">{accordionItem.header}</h2></Accordion.Header>
                 <Accordion.Body><h4 className="helpline-text">{accordionItem.body}</h4></Accordion.Body>
             </Accordion.Item>))}
 
