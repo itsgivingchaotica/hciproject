@@ -13,7 +13,7 @@ nav{
 .title{
     font-size: 2.5rem;
     position: absolute;
-    /* bottom: -17.5%; */
+    top: 2%;
     left: 2.5%;
     display: inline;
     color: white;
@@ -40,7 +40,7 @@ nav{
     left: 29%; */
     position: absolute;
     left: 46%;
-    top: -3.5%;
+    top: -3%;
     /* text-align: center; */
     display: inline;
     /* bottom: 24%; */
@@ -55,8 +55,8 @@ nav{
     display: inline;
     font-size: 1.5rem;
     position: absolute;
-    right: 2.5%;
-    /* top: 2.5%; */
+    right: 2%;
+    top: 3%;
     font-weight: 700;
     color: white;
     text-decoration: none;
@@ -72,8 +72,8 @@ nav{
     position: absolute;
     font-size: 1.5rem;
     font-weight: 700;
-    /* top: 2.5%; */
-    right: 13.7%;
+    top: 3%;
+    right: 13.5%;
     color: white;
     text-decoration: none;
 }
@@ -88,8 +88,8 @@ nav{
     position: absolute;
     font-size: 1.5rem;
     font-weight: 700;
-    /* top: 2.5%; */
-    right: 23%;
+    top: 3%;
+    right: 23.5%;
     color: white;
     text-decoration: none;
 }
