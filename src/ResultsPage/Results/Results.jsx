@@ -8,7 +8,6 @@ import { Banner } from './Banner.jsx'
 
 export function Results({zip,daneighborhood,userResult,results,filteredResults,business,searchTerm,setSummaryBanner,reviewName,setReviewName,handleSetName,setZipcode,setPhoto1,setPhoto2,setPhoto3,setAddress1,setAddress2,setWebsite,setTelephone,setNeighborhood,setTag,setBlurb1,setBlurb2,setBlurb3,setAbout,reviewLatitude,reviewLongitude,setReviewLatitude,setReviewLongitude,summaryBanner,locationInquiry}){
 
-const { id } = useParams();
 const [alias,setAlias] = useState("");
 
     return (

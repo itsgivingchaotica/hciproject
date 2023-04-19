@@ -8,18 +8,15 @@ import { faMagnifyingGlassLocation } from '@fortawesome/free-solid-svg-icons'
 import { Typeahead } from 'react-bootstrap-typeahead';
 import { Link, Routes, Route} from 'react-router-dom'
 import styles from './searchBar.module.css';
+import zipcodesData from '../../../results.json'
 
 export function SearchBar({setZip,handleSearchEngine,daneighborhood,setDaNeighborhood,filterType,setFilterType, userResult,results,searchTerm,setSearchTerm,options,filteredResults,setFilteredResults,setSummaryBanner,setLocationInquiry,zipCodes,setZipCodes}){
   
   useEffect(() => {
-    fetch('/results.json')
-      .then(response => response.json())
-      .then(data => {
-        const zipcodes = data.results.map(result => ({
+        const zipcodes = zipcodesData.results.map(result => ({
           zipcode: result.zipcode
         }));
         setZipCodes(zipcodes);
-      });
   }, []);
 
     const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (

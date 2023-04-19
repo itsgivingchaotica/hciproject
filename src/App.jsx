@@ -12,6 +12,7 @@ import Navbar from "./components/navbar/Navbar.jsx";
 import ResourcesPage from "./ResourcesPage";
 import HomePage from "./HomePage";
 import accordionItems from "./accordionItems.json";
+import resultItems from "../results.json";
 
 function App() {
 
@@ -46,43 +47,37 @@ function App() {
 const handleUserResult = () => {
 
 }
-  useEffect(() => {
-    fetch('https://itsgivingchaotica.github.io/hciproject/results.json',{
-    headers:{
-        'Content-Type': 'application/json',
-        'Accept':'application/json'
-    }
-  })
-      .then(response => response.json())
-      .then(data => {
-        const extractedData = data.results.map(result => ({
-          id: result.id,
-          name: result.name,
-          alias: result.alias,
-          latitude: result.latitude,
-          longitude: result.longitude,
-          zipcode: result.zipcode,
-          rating: result.rating,
-          photo1: result.photo1,
-          photo2: result.photo2,
-          photo3: result.photo3,
-          Address1: result.Address1,
-          Address2: result.Address2,
-          website: result.website,
-          telephone: result.telephone,
-          neighborhood: result.neighborhood,
-          tag: result.tag,
-          blurb1: result.blurb1,
-          blurb2: result.blurb2,
-          blurb3: result.blurb3,
-          about: result.about
-        }));
-        setResults(extractedData);
-        console.log(" helloooo " + extractedData);
-      }).catch(error => {
-        console.log("Error fetching data: " + error);
-      });
+
+useEffect(() => {
+    // Extract relevant data from `resultItems` using map
+    const extractedData = resultItems.results.map(result => ({
+      id: result.id,
+      name: result.name,
+      alias: result.alias,
+      latitude: result.latitude,
+      longitude: result.longitude,
+      zipcode: result.zipcode,
+      rating: result.rating,
+      photo1: result.photo1,
+      photo2: result.photo2,
+      photo3: result.photo3,
+      Address1: result.Address1,
+      Address2: result.Address2,
+      website: result.website,
+      telephone: result.telephone,
+      neighborhood: result.neighborhood,
+      tag: result.tag,
+      blurb1: result.blurb1,
+      blurb2: result.blurb2,
+      blurb3: result.blurb3,
+      about: result.about
+    }));
+
+    // Set the extracted data to state using `setResults`
+    setResults(extractedData);
   }, []);
+        
+
     //set the results summary banner "Banner" component
     const [summaryBanner,setSummaryBanner] = useState("Results")
     //the search term the user inputs and will show in Banner
