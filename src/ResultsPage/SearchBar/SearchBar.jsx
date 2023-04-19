@@ -10,7 +10,7 @@ import { Link, Routes, Route} from 'react-router-dom'
 import styles from './searchBar.module.css';
 import zipcodesData from '../../../results.json'
 
-export function SearchBar({setZip,handleSearchEngine,daneighborhood,setDaNeighborhood,filterType,setFilterType, userResult,results,searchTerm,setSearchTerm,options,filteredResults,setFilteredResults,setSummaryBanner,setLocationInquiry,zipCodes,setZipCodes}){
+export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhood,filterType,setFilterType, userResult,results,searchTerm,setSearchTerm,options,filteredResults,setFilteredResults,setSummaryBanner,setLocationInquiry,zipCodes,setZipCodes}){
   
   useEffect(() => {
         const zipcodes = zipcodesData.results.map(result => ({
@@ -28,7 +28,7 @@ export function SearchBar({setZip,handleSearchEngine,daneighborhood,setDaNeighbo
         >
             <Form.Control
             className={styles.forms}
-                placeholder={daneighborhood}
+                placeholder={neighborhood}
                 aria-label="Default"
                 aria-describedby="inputGroup-sizing-default"
             />
@@ -70,7 +70,7 @@ export function SearchBar({setZip,handleSearchEngine,daneighborhood,setDaNeighbo
     }
 
     const handleOptionSelect = (eventKey) => {
-        setDaNeighborhood(eventKey);
+        setNeighborhood(eventKey);
         console.log(eventKey);
     }
 
@@ -172,7 +172,7 @@ export function SearchBar({setZip,handleSearchEngine,daneighborhood,setDaNeighbo
         {filterType === 'in' && (
               <Dropdown onSelect={handleOptionSelect}>
               <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
-                {daneighborhood}
+                {neighborhood}
               </Dropdown.Toggle>
               <Dropdown.Menu as={CustomMenu} style={{ maxHeight: "200px", overflowY: "scroll" }}> 
                 {neighborhoodList.map(_neighborhood => (

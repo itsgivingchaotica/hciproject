@@ -5,7 +5,7 @@ import './questions.css';
 import pinkloading from './pinkloading.gif'
 // import "./navbar.css"; // FOR THIS LINE, make sure navbar css file is imported from Andrea's work!
 
-export default function QuestionsPage({setUserResult,handleQuizResult,userResult}) {
+export default function QuestionsPage({setSearchTerm, setUserResult,handleQuizResult,userResult,setSummaryBanner}) {
   document.body.style = 'background: #f3daf0;';
   const [index, setIndex] = useState(0); // STATE LINE
   const [shouldRedirect, setShouldRedirect] = useState(false);
@@ -14,8 +14,10 @@ let question = questionList[index];
   let results = resultList;
   useEffect(() => {
     if (index >= 4) {
+      setSearchTerm("");
       setUserResult(results.get(userAnswers));
       handleQuizResult(userResult);
+      setSummaryBanner(userResult);
       setTimeout(() => { window.location.href = "#/results/"; }, 2000); 
     }
   }, [index, results, userAnswers,userResult]);

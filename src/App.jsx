@@ -17,7 +17,7 @@ import resultItems from "../results.json";
 function App() {
 
   const [results, setResults] = useState([]);
-   const [userResult, setUserResult] = useState("Squarrel Cafe");
+   const [userResult, setUserResult] = useState("");
   const [reviewName, setReviewName] = useState('');
   const [photoOne, setPhoto1] = useState("");
   const [photoTwo, setPhoto2] = useState("");
@@ -37,7 +37,7 @@ function App() {
   const [reviewLongitude,setReviewLongitude]=useState('-73.95238020363617')
   const [filterType,setFilterType] = useState("near");
 
-    const [daneighborhood,setDaNeighborhood] = useState("Prospect Park");
+    const [daneighborhood,setDaNeighborhood] = useState("New York City");
 
   function handleSetName(aname){
     setReviewName(aname);
@@ -99,16 +99,20 @@ const handleQuizResult = (userResult) => {
         const frs = fuse.search(userResult).map((result) => result.item);
         setFilteredResults(frs);
         console.log("filteredresults: " + filteredResults);
-        setSearchTerm("your result");
+        setSearchTerm(userResult);
+        let ban = searchTerm;
+        setSummaryBanner(ban);
   }
 }
 const handleSearchEngine = () => {
+  setFilterType("");
   let inquiry = `${searchTerm}`;
       if (filterType == "near"){
         inquiry += `${zip}`
         let ban = searchTerm;
         setSummaryBanner(ban);
-        setSearchTerm(inquiry); 
+        setZip(zip);
+        // setSearchTerm(inquiry); 
         setLocationInquiry(inquiry);
         const fuse = new Fuse(results,options);
         const frs = fuse.search(locationInquiry).map((result) => result.item);
@@ -116,9 +120,11 @@ const handleSearchEngine = () => {
         setSearchTerm(ban);
       }
       if (filterType == "in"){
-        inquiry += `${neighborhood}`;
+        setDaNeighborhood(neighborhood);
+        inquiry += `${daneighborhood}`;
         let ban = searchTerm;
         setSummaryBanner(ban);
+        setZip("");
         setSearchTerm(inquiry); 
         setLocationInquiry(inquiry);
       console.log("THE INQUIRY: " + inquiry);
@@ -134,17 +140,17 @@ const handleSearchEngine = () => {
   console.log(results);
   return (
     <div>
-      <Navbar setFilteredResults={setFilteredResults}setSummaryBanner={setSummaryBanner}/>
+      <Navbar setFilteredResults={setFilteredResults}setSummaryBanner={setSummaryBanner} setDaNeighborhood={setDaNeighborhood} setSearchTerm={setSearchTerm}/>
       <div>
         <div className="formatSearch">
-            <SearchBar filterType={filterType} setFilterType={setFilterType} daneighborhood={daneighborhood} setDaNeighborhood={setDaNeighborhood} handleSearchEngine={handleSearchEngine} zipCodes={zipCodes} setZipCodes={setZipCodes} zip={zip} setZip={setZip} userResult={userResult} searchTerm={searchTerm} setSearchTerm={setSearchTerm} filteredResults={filteredResults} setFilteredResults={setFilteredResults} options={options} results={results} setSummaryBanner={setSummaryBanner}setLocationInquiry={setLocationInquiry}/>
+            <SearchBar filterType={filterType} setFilterType={setFilterType} neighborhood={daneighborhood} setNeighborhood={setNeighborhood} handleSearchEngine={handleSearchEngine} zipCodes={zipCodes} setZipCodes={setZipCodes} zip={zip} setZip={setZip} userResult={userResult} searchTerm={searchTerm} setSearchTerm={setSearchTerm} filteredResults={filteredResults} setFilteredResults={setFilteredResults} options={options} results={results} setSummaryBanner={setSummaryBanner} setLocationInquiry={setLocationInquiry}/>
           </div>
           {}
       </div>
       <Routes>
         <Route path="/" element={<HomePage />}/>
 
-        <Route path="/survey/*" element={<QuestionsPage setUserResult={setUserResult} userResult={userResult} handleQuizResult={handleQuizResult}/>}/>
+        <Route path="/survey/*" element={<QuestionsPage setUserResult={setUserResult} userResult={userResult} handleQuizResult={handleQuizResult} setSearchTerm={setSearchTerm} setSummaryBanner={setSummaryBanner}/>}/>
 
         <Route path="/results/" element ={<Results zip={zip}daneighborhood={daneighborhood}userResult={userResult} filteredResults={filteredResults} searchTerm={searchTerm} summaryBanner={summaryBanner} results={results} reviewName={reviewName} setReviewName={setReviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1} setPhoto2={setPhoto2} setPhoto3={setPhoto3} setAddress1={setAddress1} setAddress2={setAddress2} setWebsite={setWebsite} setTelephone={setTelephone} setNeighborhood={setNeighborhood} setTag={setTag} setBlurb1={setBlurb1} setBlurb2={setBlurb2} setBlurb3={setBlurb3} setAbout={setAbout} setSummaryBanner={setSummaryBanner} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude} reviewLatitude={reviewLatitude} reviewLongitude={reviewLongitude} locationInquiry={locationInquiry}/>}/>
 

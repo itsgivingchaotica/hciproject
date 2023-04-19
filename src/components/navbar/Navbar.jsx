@@ -2,15 +2,17 @@ import React, {useState} from 'react';
 import "./navbar.css";
 import { Link, useNavigate } from 'react-router-dom';
 
-function Navbar({setFilteredResults,setSummaryBanner}) {
+function Navbar({setFilteredResults,setSummaryBanner,setDaNeighborhood,setSearchTerm}) {
   const [activeNav, setActiveNav] = useState("#header");
-  const navigate = useNavigate();
+  const navigateTo = useNavigate();
 
     const handleResultsLinkClick = () => {
     // Clear search results by updating state
     setFilteredResults([]);
+    setSearchTerm("");
     setSummaryBanner("");
     setSummaryBanner("Search ");
+    setDaNeighborhood("New York City")
 
     // Navigate to Results page
     navigateTo("/results");
