@@ -23,7 +23,7 @@
 
 .helpline-title{
     padding: 0.8rem 0 0.5rem;
-    color: var(--color-primary);
+    color: white;
     font-size: 1.5rem;
     font-weight: 600;
 }
@@ -32,6 +32,24 @@
     margin: 0.6rem 0 0.8rem 1.5rem;
     font-size: 1.3rem;
 }
+
+.accordion-button {
+    background-color: var(--color-primary) !important;
+}
+
+.accordion-button:hover{
+    background-color: rgb(41, 167, 154) !important;;
+}
+
+
+.accordion-button:focus {
+box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+color: #212529;
+}
+
 
 .accordion .item{
     border-color: var(--color-secondary);
