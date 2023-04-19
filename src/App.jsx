@@ -51,7 +51,12 @@ const handleUserResult = () => {
 
 }
   useEffect(() => {
-    fetch('/results.json')
+    fetch('http://itsgivingchaotica.github.io/hciproject/results.json',{
+    headers:{
+        'Content-Type': 'application/json',
+        'Accept':'application/json'
+    }
+  })
       .then(response => response.json())
       .then(data => {
         const extractedData = data.results.map(result => ({
@@ -105,22 +110,24 @@ const handleQuizResult = (userResult) => {
   }
 }
 const handleSearchEngine = () => {
+  let inquiry = `${searchTerm}`;
       if (filterType == "near"){
-        let inquiry = `${searchTerm} ${zip}`;
+        // let inquiry = `${searchTerm} ${zip}`;
+        inquiry += `${zip}`
         let ban = searchTerm;
         setSummaryBanner(ban);
         setSearchTerm(inquiry); 
         setLocationInquiry(inquiry);
         const fuse = new Fuse(results,options);
-        const frs = fuse.search(searchTerm).map((result) => result.item);
+        const frs = fuse.search(locationInquiry).map((result) => result.item);
         setFilteredResults(frs);
         setSearchTerm(ban);
       }
       if (filterType == "in"){
-        inquiry = `${searchTerm} ${neighborhood}`;
+        // inquiry = `${searchTerm} ${neighborhood}`;
+        inquiry += `${neighborhood}`;
         let ban = searchTerm;
         setSummaryBanner(ban);
-        let inquiry = `${searchTerm} ${neighborhood} ${zip}`;
         setSearchTerm(inquiry); 
         setLocationInquiry(inquiry);
       console.log("THE INQUIRY: " + inquiry);
