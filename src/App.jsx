@@ -47,7 +47,7 @@ const handleUserResult = () => {
 
 }
   useEffect(() => {
-    fetch('http://itsgivingchaotica.github.io/hciproject/results.json',{
+    fetch('https://itsgivingchaotica.github.io/hciproject/results.json',{
     headers:{
         'Content-Type': 'application/json',
         'Accept':'application/json'
@@ -79,6 +79,8 @@ const handleUserResult = () => {
         }));
         setResults(extractedData);
         console.log(" helloooo " + extractedData);
+      }).catch(error => {
+        console.log("Error fetching data: " + error);
       });
   }, []);
     //set the results summary banner "Banner" component
@@ -146,7 +148,7 @@ const handleSearchEngine = () => {
       </div>
       <Routes>
         <Route path="/" element={<HomePage />}/>
-        
+
         <Route path="/survey/*" element={<QuestionsPage setUserResult={setUserResult} userResult={userResult} handleQuizResult={handleQuizResult}/>}/>
 
         <Route path="/results/" element ={<Results zip={zip}daneighborhood={daneighborhood}userResult={userResult} filteredResults={filteredResults} searchTerm={searchTerm} summaryBanner={summaryBanner} results={results} reviewName={reviewName} setReviewName={setReviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1} setPhoto2={setPhoto2} setPhoto3={setPhoto3} setAddress1={setAddress1} setAddress2={setAddress2} setWebsite={setWebsite} setTelephone={setTelephone} setNeighborhood={setNeighborhood} setTag={setTag} setBlurb1={setBlurb1} setBlurb2={setBlurb2} setBlurb3={setBlurb3} setAbout={setAbout} setSummaryBanner={setSummaryBanner} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude} reviewLatitude={reviewLatitude} reviewLongitude={reviewLongitude} locationInquiry={locationInquiry}/>}/>
