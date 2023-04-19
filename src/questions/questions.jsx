@@ -6,7 +6,6 @@ import pinkloading from './pinkloading.gif'
 // import "./navbar.css"; // FOR THIS LINE, make sure navbar css file is imported from Andrea's work!
 
 export default function QuestionsPage({setSearchTerm, setUserResult,handleQuizResult,userResult,setSummaryBanner}) {
-  document.body.style = 'background: #f3daf0;';
   const [index, setIndex] = useState(0); // STATE LINE
   const [shouldRedirect, setShouldRedirect] = useState(false);
   const [userAnswers, setUserAnswers] = useState("");
