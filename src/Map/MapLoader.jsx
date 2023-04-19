@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
+import { useLoadScript, } from '@react-google-maps/api';
 import { Map } from './Map.jsx'
 
 export function MapLoader({latitude,longitude,focus}){
@@ -16,8 +16,6 @@ useEffect(() => {
     console.log("effecteed lat " +  latitude);
     setPLongitude(parseFloat(longitude));
   }, [latitude, longitude]);
-
-  console.log(pLatitude + " pppppppp" + pLongitude);
 
     if (!isLoaded) return <div>Loading...</div>;
 

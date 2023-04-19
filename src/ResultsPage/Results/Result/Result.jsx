@@ -9,14 +9,6 @@ import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'
 import { ResultDetails } from './ResultDetails/ResultDetails.jsx'
 
 export function Result({result, results, reviewName, setReviewName,setZipcode,setPhoto1,setPhoto2,setPhoto3,setAddress1,setAddress2,setWebsite,setTelephone,setNeighborhood,setTag,setBlurb1,setBlurb2,setBlurb3,setAbout, setSummaryBanner,setReviewLatitude,setReviewLongitude}){
-    const resultName = result.name;
-    const resultZip = result.zipcode;
-    const resultLatitude = result.Latitude;
-
-    console.log("Result resultsssss : " + result.name + " " + result);
-
-    console.log(result.latitude + " " + result.longitude);
-
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {

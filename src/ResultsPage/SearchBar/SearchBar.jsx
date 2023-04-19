@@ -10,9 +10,6 @@ import { Link, Routes, Route} from 'react-router-dom'
 import styles from './searchBar.module.css';
 
 export function SearchBar({setZip,handleSearchEngine,daneighborhood,setDaNeighborhood,filterType,setFilterType, userResult,results,searchTerm,setSearchTerm,options,filteredResults,setFilteredResults,setSummaryBanner,setLocationInquiry,zipCodes,setZipCodes}){
-
-  // const [zipCodes, setZipCodes] = useState([]);
-  // const [zip,setZip] = useState("");
   
   useEffect(() => {
     fetch('/results.json')
@@ -88,30 +85,7 @@ export function SearchBar({setZip,handleSearchEngine,daneighborhood,setDaNeighbo
     const handleZipChange = (e) => {
       setZip(e.target.value);
       console.log(zip);
-    } // I emailed the Zoom link
-    // const handleSearchEngine = (e) => {
-    //   let inquiry;
-    //   if (userResult != ""){
-    //     setSearchTerm(userResult);
-    //   }
-    //   if (filterType == "near"){
-    //     inquiry = `${searchTerm} ${zip}`;
-    //   }
-    //   else {
-    //     inquiry = `${searchTerm} ${neighborhood}`;
-    //   }
-    //   let ban = searchTerm;
-    //   setSummaryBanner(ban);
-    //   // let inquiry = `${searchTerm} ${neighborhood} ${zip}`;
-    //   setSearchTerm(inquiry); 
-    //   setLocationInquiry(inquiry);
-    //   console.log("THE INQUIRY: " + inquiry);
-    //   const fuse = new Fuse(results,options);
-    //   const frs = fuse.search(searchTerm).map((result) => result.item);
-    //   setFilteredResults(frs);
-    //   console.log("filteredresults: " + filteredResults);
-    //   setSearchTerm(ban);
-    // }
+    } 
     
     console.log(filteredResults);
 

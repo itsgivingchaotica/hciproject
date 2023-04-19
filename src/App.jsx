@@ -38,15 +38,11 @@ function App() {
 
     const [daneighborhood,setDaNeighborhood] = useState("Prospect Park");
 
-  //
   function handleSetName(aname){
     setReviewName(aname);
     console.log(reviewName + " handled")
   }
-//   const handleSetName = (reviewName) => {
-//     setReviewName(reviewName);
-//     console.log(reviewame + " handled");
-// }
+
 const handleUserResult = () => {
 
 }
@@ -112,7 +108,6 @@ const handleQuizResult = (userResult) => {
 const handleSearchEngine = () => {
   let inquiry = `${searchTerm}`;
       if (filterType == "near"){
-        // let inquiry = `${searchTerm} ${zip}`;
         inquiry += `${zip}`
         let ban = searchTerm;
         setSummaryBanner(ban);
@@ -124,7 +119,6 @@ const handleSearchEngine = () => {
         setSearchTerm(ban);
       }
       if (filterType == "in"){
-        // inquiry = `${searchTerm} ${neighborhood}`;
         inquiry += `${neighborhood}`;
         let ban = searchTerm;
         setSummaryBanner(ban);
@@ -151,8 +145,8 @@ const handleSearchEngine = () => {
           {}
       </div>
       <Routes>
-        {/* <Route path="*" element={<ResultsPage results={results} setReviewName={setReviewName} reviewName={reviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1}setPhoto2={setPhoto2}setPhoto3={setPhoto3}filteredResults={filteredResults}searchTerm={searchTerm}exact summaryBanner={summaryBanner}setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude}/>} /> */}
         <Route path="/" element={<HomePage />}/>
+        
         <Route path="/survey/*" element={<QuestionsPage setUserResult={setUserResult} userResult={userResult} handleQuizResult={handleQuizResult}/>}/>
 
         <Route path="/results/" element ={<Results zip={zip}daneighborhood={daneighborhood}userResult={userResult} filteredResults={filteredResults} searchTerm={searchTerm} summaryBanner={summaryBanner} results={results} reviewName={reviewName} setReviewName={setReviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1} setPhoto2={setPhoto2} setPhoto3={setPhoto3} setAddress1={setAddress1} setAddress2={setAddress2} setWebsite={setWebsite} setTelephone={setTelephone} setNeighborhood={setNeighborhood} setTag={setTag} setBlurb1={setBlurb1} setBlurb2={setBlurb2} setBlurb3={setBlurb3} setAbout={setAbout} setSummaryBanner={setSummaryBanner} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude} reviewLatitude={reviewLatitude} reviewLongitude={reviewLongitude} locationInquiry={locationInquiry}/>}/>

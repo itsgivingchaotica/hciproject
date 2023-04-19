@@ -1,6 +1,3 @@
-// import { ResultsPage } from './ResultsPage/ResultsPage.jsx';
-// import { ResultDetails } from "./ResultsPage/Results/Result/ResultDetails/ResultDetails.jsx"
-import { HashRouter as Router, Routes, Route, useParams } from 'react-router-dom'; // testing out these top three imports for now
 import { questionList, resultList } from './question-data.js';
 import React from 'react';
 import { useEffect, useState } from "react";
@@ -27,34 +24,6 @@ let question = questionList[index];
     setUserAnswers(userAnswers + ans);
     setIndex(index + 1);
   }
-
-  // function Navbar() {
-  //   const [activeNav, setActiveNav] = useState("#header");
-  
-  
-  //   return (
-  //     <nav>
-  //       <h1 className="title">
-  //       {/* <Link to="/">InfiniteNYC </Link> */}
-  //       <a href="/">InfiniteNYC</a>
-  //       </h1>
-  //       <a id="logo" href="/">∞∞</a>
-  //       <a className="survey-link" href="/">Survey</a>
-  //       <a className="explore-link" href="/">Explore</a>
-  //       <a className="resources-link" href="/resources-page">Helplines</a>
-  
-  
-  //     </nav>
-  //   )
-  // }
-
-  // function Dropdown() {
-  //   return (
-  //     <button>--Menu--</button>
-  //   )
-  // }
-  //single user result to redirect
-  // let userResult = results.get(userAnswers);
 
   function QuestionBox() {
     let answers = [question.option1, question.option2, question.option3]

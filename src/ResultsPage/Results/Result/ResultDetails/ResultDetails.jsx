@@ -14,8 +14,6 @@ export function ResultDetails(props){
 
   const { result, reviewName, photoOne, photoTwo, photoThree, zipCode, reviewLongitude, reviewLatitude, Address1, Address2, website, telephone, neighborhood, tag, blurb1, blurb2, blurb3, about} = props;
 
-  console.log(reviewName + " " + photoOne + " " + photoTwo + " " + photoThree + " " + zipCode + " " + reviewLatitude + " " + reviewLongitude + " sources");
-
   // Use state to store the photo props
   const [photoOneUrl, setPhotoOneUrl] = useState(photoOne);
   const [photoTwoUrl, setPhotoTwoUrl] = useState(photoTwo);
