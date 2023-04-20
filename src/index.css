@@ -15,16 +15,18 @@
 :root{
   /* --color-secondary: #65b4be; */
   --color-primary: cadetblue;
+  /* --color-primary: rgb(10, 144, 151); */
+  --color-primary: rgb(0, 146, 154);
 
   /* --color-primary: rgb(95, 137, 160); */
   /* --color-secondary: cadetblue; */
   --color-secondary: black;
 
-  --transition: all 400ms ease
+  --transition: all 400ms ease;
 }
 
 html {
-  scroll-behavior: smooth;;
+  scroll-behavior: smooth;
 }
 /* ::webkit-scrollbar {
   display: none;
@@ -34,6 +36,20 @@ body {
   background-color: white;
   /* font-family: 'Mulish', sans-serif; */
   font-family: 'Poppins', sans-serif;
+  /* background-image: url("https://media.istockphoto.com/id/1406960186/photo/the-skyline-of-new-york-city-united-states.jpg?b=1&s=170667a&w=0&k=20&c=pSGVgYmze-7eDhOt6jr5xgfVKbwDeh969KLEt-isd1A="); */
+  /* background-blend-mode:difference; */
+  /* background: inherit;
+  background-clip: text;
+  color: transparent;
+  filter: invert(1); */
+  /* background: linear-gradient(rgba(230, 255, 239, 0.92), rgba(255, 239, 239, 0.92)), */
+  /* background: linear-gradient(rgba(255, 239, 239, 0.92),rgba(230, 255, 239, 0.92)), */
+  /* background: linear-gradient(rgba(255, 247, 230, 0.92), rgba(255, 253, 239, 0.92)), */
+  /* background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), */
+  /* background: linear-gradient(rgba(236, 212, 211, 0.92), rgba(255, 239, 239, 0.92)), */
+  /* background: radial-gradient( rgba(255, 239, 239, 1),rgba(230, 255, 239, 0.85)),
+  url("https://media.istockphoto.com/id/1406960186/photo/the-skyline-of-new-york-city-united-states.jpg?b=1&s=170667a&w=0&k=20&c=pSGVgYmze-7eDhOt6jr5xgfVKbwDeh969KLEt-isd1A="); */
+  /* text-shadow: 0px 1px 1px var(--color-secondary); */
 }
 
 :hover{

@@ -35,6 +35,7 @@
 
 .accordion-button {
     background-color: var(--color-primary) !important;
+    box-shadow: 3px 0px 3px black;
 }
 
 .accordion-button:hover{

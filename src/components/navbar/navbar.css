@@ -8,6 +8,7 @@ nav{
     border-color: var(--color-secondary);
     border-width: 0.2rem;
     color: white;
+    box-shadow: 0 2px 2px 2px var(--color-secondary);
 }
 
 .title{

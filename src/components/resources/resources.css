@@ -23,7 +23,7 @@
     background-color: var(--color-primary);
     border: solid;
     border-color: var(--color-secondary);
-    box-shadow: 0 3px 3px 0 var(--color-secondary);
+    box-shadow: 0 3px 3px 3px var(--color-secondary);
     padding: 1.2rem;
     font-weight: 900;
     font-size: 1.4rem;
