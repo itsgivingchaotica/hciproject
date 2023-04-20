@@ -96,12 +96,11 @@ export function ResultDetails(props){
     <div className={styles.locationinfo}>
     <br/>
     <strong>Location & Info</strong>
-    <br/>
-    <br/>
     </div>
     <div className={styles.infoContainer}>
     <div className={styles.mapContainer}>
       <MapLoader focus={15} longitude={reviewLongitude} latitude={reviewLatitude}/>
+      </div>
       <div className={styles.accordionContainer}>
       <Accordion defaultActiveKey="0" className={styles.customAccordion}>
       <Accordion.Item eventKey="0">
@@ -117,7 +116,7 @@ export function ResultDetails(props){
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
-    </div>
+    {/* </div> */}
     </div>
       </div>
     </div>

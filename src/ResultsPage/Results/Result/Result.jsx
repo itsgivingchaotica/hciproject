@@ -77,7 +77,7 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
             <Link to={`/results/${result.id}`} key={result.id}>
             <img src={result.photo1} alt="result image" className={styles['result-image']}></img></Link>
                 <div className={styles.info} onClick={() => handleCardClick(result.latitude,result.longitude)}>
-                     <Card border="secondary" className={ styles.address }>
+                     <Card className={ styles.address }>
                         <Card.Header>
                             <LocationRating rating={result.rating}/>
                         </Card.Header>
