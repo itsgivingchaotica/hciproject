@@ -88,7 +88,8 @@ useEffect(() => {
 //options to pass to fuse search to search against from json results[]
     const options = {
       minMatchCharLength: 3,
-      keys: ["name","alias","zipcode","latitude","longitude","about","blurb1","blurb2","blurb3","tag","neighborhood","telephone","website","Address1","Address2"]
+      threshold: 0.5,
+      keys: ["name","alias","zipcode",,"about",,"tag","neighborhood","Address1","Address2"]
   }
   const [zipCodes, setZipCodes] = useState([]);
   const [zip,setZip] = useState("");
@@ -105,7 +106,7 @@ const handleQuizResult = (userResult) => {
   }
 }
 const handleSearchEngine = () => {
-  setFilterType("");
+  setFilteredResults([]);
   let inquiry = `${searchTerm}`;
       if (filterType == "near"){
         inquiry += `${zip}`
@@ -114,22 +115,35 @@ const handleSearchEngine = () => {
         setZip(zip);
         // setSearchTerm(inquiry); 
         setLocationInquiry(inquiry);
+        console.log("location inquiry: " + inquiry);
         const fuse = new Fuse(results,options);
-        const frs = fuse.search(locationInquiry).map((result) => result.item);
+        const frs = fuse.search(ban).map((result) => result.item);
         setFilteredResults(frs);
         setSearchTerm(ban);
       }
-      if (filterType == "in"){
+      else if (filterType == "in"){
+        setZip("");
         setDaNeighborhood(neighborhood);
         inquiry += `${daneighborhood}`;
         let ban = searchTerm;
         setSummaryBanner(ban);
-        setZip("");
         setSearchTerm(inquiry); 
         setLocationInquiry(inquiry);
       console.log("THE INQUIRY: " + inquiry);
         const fuse = new Fuse(results,options);
-        const frs = fuse.search(searchTerm).map((result) => result.item);
+        const frs = fuse.search(ban).map((result) => result.item);
+        setFilteredResults(frs);
+        console.log("filteredresults: " + filteredResults);
+        setSearchTerm(ban);
+      }
+      else{
+        let ban = searchTerm;
+        setSummaryBanner(ban);
+        setSearchTerm(inquiry); 
+        setLocationInquiry(inquiry);
+        console.log("THE INQUIRY: " + inquiry);
+        const fuse = new Fuse(results,options);
+        const frs = fuse.search(ban).map((result) => result.item);
         setFilteredResults(frs);
         console.log("filteredresults: " + filteredResults);
         setSearchTerm(ban);

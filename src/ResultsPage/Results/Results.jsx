@@ -15,7 +15,7 @@ const [alias,setAlias] = useState("");
             <div>
                 <div className={styles.mapped}>
                 <div>
-                {filteredResults == "" ? (<div classNgime="adjustBanner">
+                {filteredResults == "" ? (<div className="adjustBanner">
               
           <Banner summaryBanner={summaryBanner} searchTerm={searchTerm} locationInquiry={locationInquiry} numberResults={results.length} zip={zip} daneighborhood={daneighborhood}/>
           </div>):(<div className="adjustBanner">
