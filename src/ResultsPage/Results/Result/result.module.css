@@ -54,6 +54,11 @@
     box-shadow: 2px 2px 2px black;
 }
 
+.address:hover{
+  box-shadow: 5px 5px 5px black;
+  cursor: pointer;
+}
+
   /* arrow in card */
   a svg{
     color: white;
