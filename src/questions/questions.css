@@ -41,7 +41,8 @@
   border: 10px;
   border-radius: 100px;
   padding: 80px;
-  background-color: cadetblue;
+  background-color: var(--color-primary);
+  color: white;
   width: 60%;
   align-self: center;
   margin: auto;
@@ -82,18 +83,22 @@
   display: inline-block;
   font-size: 16px;
   font-weight: 600;
-
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
+  border: 2px solid;
+  box-shadow: 0 2px 2px 2px;
 
 }
 .choiceBtn:hover {
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(220, 220, 220);
   transition-duration: 0.2s;
 }
 .choiceBtn:active {
-  background-color: cadetblue
+  background-color: var(--color-primary);
+  color: white;
+  border-color:white;
+  box-shadow: none;
 }
 
 .surveyOver {
@@ -110,5 +115,7 @@
   font-size: 40px;
 }
 .loadIMG {
-  margin-left: 24%;
+  /* margin-left: 24%; */
+  margin-right: 2%;
+  margin-bottom: 10%;
 }

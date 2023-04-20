@@ -48,14 +48,19 @@
     flex-wrap: nowrap;
     width: 600px;
     color: white;
-    background-color: cadetblue !important;
+    background-color: var(--color-primary) !important;
     border: solid 1px black !important;
     text-align: left;
+    box-shadow: 2px 2px 2px black;
 }
 
   /* arrow in card */
   a svg{
     color: white;
+  }
+
+  a svg:hover{
+    color: black;
   }
 
 .writeReview{

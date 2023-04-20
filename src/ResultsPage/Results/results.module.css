@@ -12,6 +12,7 @@
     border-width: 0.1rem;
     border-color: black;
     /* display: block; */
+    box-shadow: 2px 2px 2px 2px black;
 }
 
 .banner{

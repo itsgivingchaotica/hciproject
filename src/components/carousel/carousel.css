@@ -5,6 +5,8 @@
     margin-top: 3rem;
     padding-bottom: 12rem;
     margin-bottom: -3.2rem;
+    border: 1px solid black;
+    box-shadow: 3px 3px 3px 3px black;
 }
 
 .carousel{
