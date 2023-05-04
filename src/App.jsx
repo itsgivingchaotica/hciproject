@@ -87,10 +87,56 @@ useEffect(() => {
     const [locationInquiry,setLocationInquiry] = useState([]);
 //options to pass to fuse search to search against from json results[]
     const options = {
-      minMatchCharLength: 3,
-      threshold: 0.5,
-      keys: ["name","alias","zipcode",,"about",,"tag","neighborhood","Address1","Address2"]
+      minMatchCharLength: 4,
+      threshold: 0.9,
+      shouldSort: true,
+      includeMatches: true,
+      keys: [
+        {
+        name: "name",
+        weight: 0.2
+        },
+        // {
+        //   name: "alias",
+        //   weight: 0.02
+        // },
+        // {
+        //   name: "zipcode",
+        //   weight: 0.01
+        // },
+        {
+          name: "about",
+          weight: 0.1
+        },
+        {
+          name: "tag",
+          weight: 0.6
+        },
+        // {
+        //   name: "neighborhood",
+        //   weight: 0.1
+        // },
+        // {
+        //   name: "Address1",
+        //   weight: 0.1
+        // },
+        // {
+        // name: "Address2",
+        // weight: 0.05
+        // }
+    ]
   }
+
+  // keys: [
+  //   {
+  //     name: 'title',
+  //     weight: 0.3
+  //   },
+  //   {
+  //     name: 'author',
+  //     weight: 0.7
+  //   }
+  // ]
   const [zipCodes, setZipCodes] = useState([]);
   const [zip,setZip] = useState("");
 
