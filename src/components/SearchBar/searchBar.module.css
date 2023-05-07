@@ -1,5 +1,6 @@
 .neighborhoods{
-    min-width: 250px !important;
+    margin-top: 100px;
+    min-width: 200px;
     justify-content: flex-end;
     margin-right: 50px;
 }

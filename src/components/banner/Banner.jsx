@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./results.module.css"
+import styles from "../../ResultsPage/Results/results.module.css"
 
 export function Banner({summaryBanner,numberResults,daneighborhood,zip}){
     return (

@@ -11,9 +11,11 @@ export function Map({latitude,longitude,focus,newCenter}){
     
     return (
         <div className={styles.widthClass}>
+         <div style={{ }}>
             <GoogleMap zoom={focus} center={center} mapContainerClassName={focus==15 ? styles.smallWidth : styles.mapContainer}>
                 <MarkerF position={center}></MarkerF>
             </GoogleMap>
+            </div>
         </div>
     )
   }

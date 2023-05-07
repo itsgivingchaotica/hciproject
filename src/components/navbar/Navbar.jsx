@@ -28,8 +28,6 @@ function Navbar({setFilteredResults,setSummaryBanner,setDaNeighborhood,setSearch
       <Link to="/survey" className="survey-link">Survey</Link>
       <Link to="/results/" className="explore-link" onClick={() => handleResultsLinkClick()}>Explore</Link>
       <Link to="/resources-page" className="resources-link">Helplines</Link>
-
-
     </nav>
   )
 }

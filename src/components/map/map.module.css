@@ -16,3 +16,7 @@
     height: 50% !important;
     padding-bottom: 50%;
 }
+
+.widthClass {
+    z-index: 1;
+}

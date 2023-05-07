@@ -39,6 +39,11 @@
 .width{
     width: 185px;
     margin-left: 1rem;
+    position: fixed;
+    top: 150px;
+    left: 880px;
+    width: 20%;
+    height: 60%;
 }
 
 ._width_tiupn_38{

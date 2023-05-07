@@ -1,23 +1,22 @@
 
 import React, { useEffect, useState} from 'react';
-import { ResultDetails } from "./ResultsPage/Results/Result/ResultDetails/ResultDetails.jsx"
+import { ResultDetails } from "./ResultsPage/ResultDetails/ResultDetails.jsx"
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import { SearchBar } from './ResultsPage/SearchBar/SearchBar.jsx'
-import { Banner } from './ResultsPage/Results/Banner.jsx'
+import { SearchBar } from './components/SearchBar/SearchBar.jsx'
 import { Results } from './ResultsPage/Results/Results.jsx';
-import QuestionsPage  from './questions/questions.jsx'
+import QuestionsPage  from './QuestionsPage/QuestionsPage.jsx'
 import Fuse from 'fuse.js';
 import Navbar from "./components/navbar/Navbar.jsx";
-import ResourcesPage from "./ResourcesPage";
-import HomePage from "./HomePage";
+import ResourcesPage from "./ResourcesPage/ResourcesPage.jsx";
+import HomePage from "./HomePage/HomePage.jsx";
 import accordionItems from "./accordionItems.json";
 import resultItems from "../results.json";
 
 function App() {
 
   const [results, setResults] = useState([]);
-   const [userResult, setUserResult] = useState("");
+  const [userResult, setUserResult] = useState("");
   const [reviewName, setReviewName] = useState('');
   const [photoOne, setPhoto1] = useState("");
   const [photoTwo, setPhoto2] = useState("");
@@ -36,8 +35,7 @@ function App() {
   const [reviewLatitude,setReviewLatitude] = useState('40.63124780572077');
   const [reviewLongitude,setReviewLongitude]=useState('-73.95238020363617')
   const [filterType,setFilterType] = useState("near");
-
-    const [daneighborhood,setDaNeighborhood] = useState("New York City");
+  const [daneighborhood,setDaNeighborhood] = useState("New York City");
 
   function handleSetName(aname){
     setReviewName(aname);
@@ -200,7 +198,7 @@ const handleSearchEngine = () => {
   console.log(results);
   return (
     <div>
-      <Navbar setFilteredResults={setFilteredResults}setSummaryBanner={setSummaryBanner} setDaNeighborhood={setDaNeighborhood} setSearchTerm={setSearchTerm}/>
+      <Navbar setFilteredResults={setFilteredResults} setSummaryBanner={setSummaryBanner} setDaNeighborhood={setDaNeighborhood} setSearchTerm={setSearchTerm}/>
       <div>
         <div className="formatSearch">
             <SearchBar filterType={filterType} setFilterType={setFilterType} neighborhood={daneighborhood} setNeighborhood={setNeighborhood} handleSearchEngine={handleSearchEngine} zipCodes={zipCodes} setZipCodes={setZipCodes} zip={zip} setZip={setZip} userResult={userResult} searchTerm={searchTerm} setSearchTerm={setSearchTerm} filteredResults={filteredResults} setFilteredResults={setFilteredResults} options={options} results={results} setSummaryBanner={setSummaryBanner} setLocationInquiry={setLocationInquiry}/>
@@ -218,7 +216,7 @@ const handleSearchEngine = () => {
 
         {/* <Route path="*" element={<ResultsPage results={results} setReviewName={setReviewName} reviewName={reviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1}filteredResults={filteredResults}searchTerm={searchTerm}exact summaryBanner={summaryBanner}setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude}/>} />
          */}
-        <Route path="/results/:id/" element={<ResultDetails reviewName={reviewName} photoOne={photoOne} zipCode={zipCode} setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude}/>}/>
+        <Route path="/results/:id/" element={<ResultDetails reviewName={reviewName} photoOne={photoOne} zipCode={zipCode} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude} reviewLatitude={reviewLatitude} reviewLongitude={reviewLongitude}/>}/>
         <Route path="/resources-page" element={<ResourcesPage accordionItems={accordionItems}/>}/>
       </Routes>
     </div>

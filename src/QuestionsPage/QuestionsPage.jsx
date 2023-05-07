@@ -1,4 +1,4 @@
-import { questionList, resultList } from './question-data.js';
+import { questionList, resultList } from '../components/questions/question-data.js';
 import React from 'react';
 import { useEffect, useState } from "react";
 import './questions.css';

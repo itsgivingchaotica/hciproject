@@ -3,10 +3,10 @@ import styles from './result.module.css';
 import { Card } from 'react-bootstrap'
 import Placeholder from 'react-bootstrap/Placeholder';
 import { HashRouter as Router, Link, Routes, Route} from 'react-router-dom'
-import { LocationRating } from '../../../Rating/Rating.jsx'
+import { LocationRating } from '../Rating/Rating.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'
-import { ResultDetails } from './ResultDetails/ResultDetails.jsx'
+import { ResultDetails } from '../../ResultsPage/ResultDetails/ResultDetails.jsx'
 
 export function Result({result, results, reviewName, setReviewName,setZipcode,setPhoto1,setPhoto2,setPhoto3,setAddress1,setAddress2,setWebsite,setTelephone,setNeighborhood,setTag,setBlurb1,setBlurb2,setBlurb3,setAbout, setSummaryBanner,setReviewLatitude,setReviewLongitude}){
     const [isLoading, setIsLoading] = useState(true);
