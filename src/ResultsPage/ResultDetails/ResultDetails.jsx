@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion'
 import { useParams } from 'react-router-dom';
 import Button from 'react-bootstrap/Button'
-import styles from '../../components/Result/result.module.css';
+import styles from '../../components/result/result.module.css';
 import { Banner } from "../../components/banner/Banner.jsx"
-import { SearchBar } from "../../components/SearchBar/SearchBar.jsx"
+import { SearchBar } from "../../components/searchbar/SearchBar.jsx"
 import { MapLoader } from "../../components/map/MapLoader.jsx"
 import { LocationCarousel } from "../../components/locationCarousel/LocationCarousel.jsx"
 

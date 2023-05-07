@@ -3,7 +3,7 @@ import styles from './result.module.css';
 import { Card } from 'react-bootstrap'
 import Placeholder from 'react-bootstrap/Placeholder';
 import { HashRouter as Router, Link, Routes, Route} from 'react-router-dom'
-import { LocationRating } from '../Rating/Rating.jsx'
+import { LocationRating } from '../rating/Rating.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'
 import { ResultDetails } from '../../ResultsPage/ResultDetails/ResultDetails.jsx'

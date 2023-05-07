@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import styles from "./results.module.css";
-import { Result } from "../../components/Result/Result.jsx";
+import { Result } from "../../components/result/Result.jsx";
 import { MapLoader } from "../../components/map/MapLoader.jsx";
 import { Banner } from '../../components/banner/Banner.jsx'
 
