@@ -8,14 +8,12 @@
 }
 
 .header{
-    font-size: 3rem;
+    font-size: 2.9rem;
     text-align:center;
     margin-bottom: 4rem;
-    font-weight: 600;
-}
-
-.header:hover{
-    font-size: 3.1rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-secondary);
 }
 
 .cta{
@@ -31,18 +29,18 @@
 }
 
 .places{
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.2rem;
     position: relative;
     display: inline-block;
     padding: 3% 6%;
     /* left: 20%; */
     color: var(--color-secondary);
+    font-family: 'Poppins', sans-serif;
 }
 
 .cta-btn{
     text-decoration: none;
-    font-family: 'Mulish', sans-serif;
     border: solid;
     padding: 0.9rem;
     font-size: 1.4rem;
@@ -59,6 +57,7 @@
     box-shadow: 0 1px 1px 1px var(--color-secondary);
     display:inline-block;
     text-align: center;
+    transition: var(--transition);
 }
 
 a.cta-btn:hover{

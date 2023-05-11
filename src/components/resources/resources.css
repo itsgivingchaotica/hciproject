@@ -5,8 +5,9 @@
 }
 
 .resources-prompt{
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     margin: 2.5rem 2rem;
+    font-family: 'Klee One', cursive;
 }
 
 .resources-questions{
@@ -14,6 +15,8 @@
     text-align: center;
     margin: 4rem 2rem;
     color: var(--color-secondary);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
 
 .resources-button{
@@ -33,14 +36,15 @@
     position: relative;
     /* left: 38%; */
     border-radius: 1.2rem;
+    transition: var(--transition);
+    font-family: 'Klee One', cursive;
 }    
 
 .resources-button:hover{
     background-color: white;
     color: var(--color-primary);
     box-shadow: none;
-    width: 30%;
-    /* left: 35.5%; */
+    width: 36%;
 }
 
 /***********Media queries (tablets, medium devices) *************/

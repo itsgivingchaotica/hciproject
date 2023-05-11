@@ -3,22 +3,19 @@
 }
 
 .heading{
-    color: var(--color-primary);
-    font-size: 3.6rem;
+    color: var(--color-secondary);
+    font-size: 3.5rem;
     text-align: center;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     margin-bottom: 3.5rem;
-    font-weight: 600;
-}
-
-.heading:hover{
-    font-size: 3.7rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
 }
 
 .subheading{
-    margin-bottom: 1.5rem;
     color: var(--color-secondary);
     font-size: 1.8rem;
+    margin-bottom: 2rem;
 }
 
 .helpline-title{
@@ -31,24 +28,24 @@
 .helpline-text{
     margin: 0.6rem 0 0.8rem 1.5rem;
     font-size: 1.3rem;
+    color: black;
 }
 
 .accordion-button {
     background-color: var(--color-primary) !important;
-    box-shadow: 3px 0px 3px black;
+    box-shadow: 3px 0px 3px black !important;
 }
 
 .accordion-button:hover{
-    background-color: rgb(41, 167, 154) !important;;
+    background-color: rgb(41, 167, 154) !important;
 }
 
-
 .accordion-button:focus {
-box-shadow: none;
+    box-shadow: none;
 }
 
 .accordion-button:not(.collapsed) {
-color: #212529;
+    color: #212529;
 }
 
 

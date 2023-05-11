@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import "./resourcespage.module.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Accordion} from "react-bootstrap";
+import "./resourcespage.css";
 
 function ResourcesPage({accordionItems}){
     return(

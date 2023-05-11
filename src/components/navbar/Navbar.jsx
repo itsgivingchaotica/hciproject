@@ -26,7 +26,7 @@ function Navbar({setFilteredResults,setSummaryBanner,setDaNeighborhood,setSearch
       <Link to="/">InfiniteNYC</Link>
       {/* <a href="/">InfiniteNYC</a> */}
       </h1>
-      <FontAwesomeIcon id="infinity-logo" icon={faInfinity}/>
+      <Link to="/"><FontAwesomeIcon id="infinity-logo" icon={faInfinity}/></Link>
       <Link to="/survey" className="survey-link">Survey</Link>
       <Link to="/results/" className="explore-link" onClick={() => handleResultsLinkClick()}>Explore</Link>
       <Link to="/resources-page" className="resources-link">Helplines</Link>

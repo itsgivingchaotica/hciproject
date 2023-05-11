@@ -1,11 +1,7 @@
 nav{
-    /* background-color: #49b884; */
-    /* background-color: cadetblue; */
-    /* background-color: var(--color-primary); */
     background-color: var(--color-main);
     height: 4rem;
     border-bottom: solid;
-    /* border-color: #49b884; */
     border-color: var(--color-secondary);
     border-width: 0.2rem;
     color: white;
@@ -15,6 +11,7 @@ nav{
     left: 0;
     width: 100%;
     z-index: 10;
+    font-family: 'Klee One', cursive;
 }
 
 .title{
@@ -53,14 +50,14 @@ nav{
 
 #infinity-logo{
     font-weight: 900;
-    font-size: 5rem;
+    font-size: 4rem;
     color: white;
     text-decoration: none;
     /* position: relative;
     left: 29%; */
     position: absolute;
-    left: 46%;
-    top: -10px;
+    left: 47%;
+    top: -1px;
     /* text-align: center; */
     display: inline;
 }

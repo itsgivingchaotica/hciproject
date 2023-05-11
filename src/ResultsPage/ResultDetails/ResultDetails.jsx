@@ -21,7 +21,7 @@ export function ResultDetails(props){
 
     <div className={styles.locationinfo}>
     <br/>
-    <strong>Location & Info</strong>
+    <h1>Location & Info</h1>
     </div>
 
     <div className={styles.infoContainer}>
