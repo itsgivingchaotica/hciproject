@@ -31,8 +31,8 @@ function Header() {
             </div>
 
             <div className="scenery">
-                <img className="bridge-image" src="https://cdn.contexttravel.com/image/upload/v1571947407/blog/36%20Hours%20in%20NYC/NewYorkBridge.jpg"></img>
-                <img className="city-image" src="https://media.istockphoto.com/id/1406960186/photo/the-skyline-of-new-york-city-united-states.jpg?b=1&s=170667a&w=0&k=20&c=pSGVgYmze-7eDhOt6jr5xgfVKbwDeh969KLEt-isd1A="></img>
+                <img className="bridge-image" alt="brooklyn bridge" src="https://cdn.contexttravel.com/image/upload/v1571947407/blog/36%20Hours%20in%20NYC/NewYorkBridge.jpg"></img>
+                <img className="city-image" alt="new york city view" src="https://media.istockphoto.com/id/1406960186/photo/the-skyline-of-new-york-city-united-states.jpg?b=1&s=170667a&w=0&k=20&c=pSGVgYmze-7eDhOt6jr5xgfVKbwDeh969KLEt-isd1A="></img>
             </div>
             <Liberty className="liberty"/>
         </div>
