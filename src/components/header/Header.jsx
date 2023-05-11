@@ -12,9 +12,8 @@ function Header() {
                 Looking for Something to do in NYC? You're Only a few Questions away!
             </h1>
 
-            {/* <button className="btn">Explore Now</button> */}
-
             <div className="cta">
+
                 <h2 className="cta-text">
                     Use our interactive experience and allow us to learn about you and prepare suggestions which align with your interests! Discover:
                 </h2>
@@ -26,9 +25,9 @@ function Header() {
                     <li>Gyms</li>
                     <li>...and more</li>
                 </ul>    
-
-                <h2 className="cta-text">You will easily find something to destress</h2>
                 <Link to="/survey" className="cta-btn">Take Survey</Link>
+                <h2 className="cta-text">You will easily find something to destress</h2>
+                {/* <Link to="/survey" className="cta-btn">Take Survey</Link> */}
             </div>
 
             <div className="scenery">

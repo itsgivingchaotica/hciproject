@@ -3,7 +3,7 @@ import React, { useEffect, useState} from 'react';
 import { ResultDetails } from "./ResultsPage/ResultDetails/ResultDetails.jsx"
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import { SearchBar } from './components/searchbar/SearchBar.jsx';
+import { SearchBar } from './components/SearchBar/SearchBar.jsx';
 import { Results } from './ResultsPage/Results/Results.jsx';
 import QuestionsPage  from './QuestionsPage/QuestionsPage.jsx'
 import Fuse from 'fuse.js';
