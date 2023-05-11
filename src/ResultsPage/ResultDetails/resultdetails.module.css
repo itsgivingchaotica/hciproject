@@ -30,3 +30,26 @@
       flex-wrap: wrap;
       margin-bottom:auto;
   }
+
+  /* --------- media queries--------- */
+  @media screen and (max-width:800px){
+    .infoContainer{
+        display: block;
+    }
+    .mapContainer{
+        display: block;
+        position: relative;
+        margin: 0;
+        left: 25%;
+        width: 100%;
+    }
+
+    .accordionContainer{
+        display: block;
+        position: relative;
+        right: 1rem;
+        top: 16rem;
+        width: 100%;
+        margin-left: 0;
+    }
+  }

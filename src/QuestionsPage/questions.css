@@ -122,3 +122,24 @@
   margin-right: 2%;
   margin-bottom: 10%;
 }
+
+/* -------- Media Queries---------- */
+@media screen and (max-width:1024px){
+  .questionBox{
+    min-width:75%;
+  }
+
+  .choiceBtn{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width:600px){
+  .questionBox{
+    min-width:95%;
+  }
+
+  .choiceBtn{
+    width: 80%;
+  }
+}
