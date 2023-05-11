@@ -12,7 +12,7 @@
     border-width: 0.1rem;
     border-color: black;
     /* display: block; */
-    box-shadow: 0 1px 2px 1px black;
+    box-shadow: 0 1px px 2px black;
 }
 
 .banner{
@@ -39,6 +39,7 @@
 .width{
     width: 185px;
     margin-left: 1rem;
+    margin-top: 2rem;
     position: fixed;
     top: 150px;
     left: 880px;
