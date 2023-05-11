@@ -16,7 +16,7 @@ useEffect(() => {
       if (window.scrollY > 50) {
         setWithTop(80); // update top attribute
       } else {
-        setWithTop(150); // reset top attribute
+        setWithTop(180); // reset top attribute
       }
     }
     window.addEventListener("scroll", handleScroll); // add event listener

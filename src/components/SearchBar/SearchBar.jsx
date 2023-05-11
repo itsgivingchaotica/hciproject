@@ -149,40 +149,10 @@ export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhoo
           aria-describedby="inputGroup-sizing-default"
           onChange={(e) => handleSearchTermChange(e)}
         />
-        </InputGroup>
-    <InputGroup size="sm" className="mb-3" >
-        <InputGroup.Radio 
-                aria-label="Radio button for following text input"
-                id="near"
-                value="near"
-                checked={filterType === 'near'}
-                onChange={() => handleOptionChange()}
-            />
-            <InputGroup.Text id="inputGroup-sizing-default" style={{ borderLeft: 'none' }}>
-            By Zipcode
-            </InputGroup.Text>
-            {filterType === 'near' && (
-                // <Form.Control
-                //     placeholder="11210"
-                //     aria-label="Default"
-                //     aria-describedby="inputGroup-sizing-default"
-                // />
-                <Typeahead 
-                    defaultSelected={zipCodes.find(zipCode => zipCode === "11210")}
-                    id="zipcodes"
-                    labelKey="zipcode"
-                    options={zipCodes}
-                    placeholder="11210"
-                    onChange={(selected) => {
-                      if (selected && selected.length > 0) {
-                        setZip(selected[0].zipcode);
-                      }
-                    }}
-                />
-            )}
+      
         
-        <InputGroup.Radio 
-            aria-label="Radio button for following text input"
+        <InputGroup.Checkbox 
+            aria-label="Checkbox for inputting neighborhood to search term within"
             id="in"
             value="in"
             checked={filterType === 'in'}

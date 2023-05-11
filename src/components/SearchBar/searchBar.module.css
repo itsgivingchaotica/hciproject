@@ -1,6 +1,7 @@
 .neighborhoods{
     margin-top: 100px;
     min-width: 200px;
+    display: flex;
     justify-content: flex-end;
     margin-right: 50px;
 }
