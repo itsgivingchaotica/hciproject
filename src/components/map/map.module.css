@@ -19,4 +19,7 @@
 
 .widthClass {
     z-index: 1;
+    height: 80%;
+    width: 78%;
+    position: absolute;
 }

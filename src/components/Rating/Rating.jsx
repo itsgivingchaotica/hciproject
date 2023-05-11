@@ -3,7 +3,6 @@ import styles from './rating.module.css';
 import Rating from 'react-rating';
 
 export function LocationRating(result){
-    console.log(result.rating);
     return(
         <div className={styles.rating}>
             <Rating 

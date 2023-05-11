@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import "./navbar.css";
 import { Link, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInfinity } from '@fortawesome/free-solid-svg-icons'
 
 function Navbar({setFilteredResults,setSummaryBanner,setDaNeighborhood,setSearchTerm}) {
   const [activeNav, setActiveNav] = useState("#header");
@@ -24,7 +26,7 @@ function Navbar({setFilteredResults,setSummaryBanner,setDaNeighborhood,setSearch
       <Link to="/">InfiniteNYC</Link>
       {/* <a href="/">InfiniteNYC</a> */}
       </h1>
-      <a id="logo" href="https://itsgivingchaotica.github.io/hciproject/">∞∞</a>
+      <FontAwesomeIcon id="infinity-logo" icon={faInfinity}/>
       <Link to="/survey" className="survey-link">Survey</Link>
       <Link to="/results/" className="explore-link" onClick={() => handleResultsLinkClick()}>Explore</Link>
       <Link to="/resources-page" className="resources-link">Helplines</Link>

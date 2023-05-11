@@ -11,7 +11,7 @@ function Resources(){
             tailored to your interests.</h2>
             <h1 className="resources-questions">Looking for Help? Need someone to talk to?</h1>
             {/* <a className="resources-button" href="/resources-page">Helplines</a> */}
-            <Link to="/resources-page" className="resources-button">Helplines</Link> 
+            <Link to="/resources-page" className="resources-button">Browse Helplines</Link> 
             <h2 className="resources-prompt">You are not alone. Check out our resources and helplines and begin your path towards positivity. </h2>
         </div>
     )

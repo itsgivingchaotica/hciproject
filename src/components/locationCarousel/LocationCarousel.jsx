@@ -5,7 +5,7 @@ import styles from '../result/result.module.css';
 export function LocationCarousel(props) {
 
   const { reviewName, photoOne, photoTwo, photoThree, blurb1, blurb2, blurb3, photoOneUrl, photoTwoUrl, photoThreeUrl} = props;
-  console.log(props);
+    
     return (
         <Carousel fade>
       <Carousel.Item key={`${photoOne}-1`}>
@@ -34,7 +34,7 @@ export function LocationCarousel(props) {
 
       <Carousel.Item key={`${photoThree}-3`}>
         <img
-          className="d-block w-100"
+          className={styles.photos}
           src={photoThreeUrl}
           alt="Third slide"
         />

@@ -11,8 +11,54 @@
 .infoContainer{
     margin-left: 25px;
     max-height: 200px;
-
+    height: 100%;
+    background-color: red;
+    display:flex;
+    align-items: flex-start;
+    justify-content: flex-end;
 }
+
+    /* .infoContainer {
+        display: grid;
+        flex-basis: 100%;
+    } */
+
+/* .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 100vh;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  width: calc(100% - 50%);
+}
+
+.right {
+  width: 50%;
+  height: 100%;
+} */
+
+ .mapContainer {
+   flex-basis: 100%;
+   justify-content: center;
+   /* width: 1800px; */
+   width: 100px;
+   height: 100%;
+   left: 25%;
+   margin: 2rem;
+ }
+
+ .accordionContainer {
+   flex-basis: 100%;
+   margin-bottom: 2rem;
+   text-align: left;
+ }
 
 .locationinfo{
     font-size: 40px;
@@ -27,15 +73,16 @@
 .result-image{
     width: 200px;
     height: 200px;
-    border-radius: 5px;
+    border-radius: 4px 4px 4px 4px;
     object-fit: cover;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     transition: box-shadow 0.3s ease-in-out;
     border: 1px solid black;
+    box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.6);
+    margin-bottom: 8px;
 }
 
 .result-image:hover{
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); /* add a glowing box-shadow effect */
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.9); /* add a glowing box-shadow effect */
     }
 
 .map {
@@ -56,12 +103,17 @@
     background-color: var(--color-primary) !important;
     border: solid 1px black !important;
     text-align: left;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 25px;
     box-shadow: 2px 2px 2px black;
+    
 }
 
 .address:hover{
-  box-shadow: 5px 5px 5px black;
   cursor: pointer;
+  outline: 8px solid rgba(0, 76, 83, 0.5);
+  outline-offset: -2px;
 }
 
   /* arrow in card */
@@ -92,18 +144,11 @@
   }
 
 .photos{
-    width:1000px;
+    width:1300px;
     height:500px;
     object-fit: cover;
     margin-top: 2rem;
   }
-
-.resultsDetails{  
-    width:900px;
-    height:500px;
-    margin: auto;
-  flex-wrap: wrap;
-}
 
 .mapWidth{
     width:180px;
@@ -129,28 +174,10 @@
     }
 
   }
-  
-  .infoContainer {
-      display: grid;
-      flex-basis: 100%;
-  }
 
   h1 #loc{
     color: var(--color-primary);
   }
 
-  .mapContainer {
-      flex-basis: 50%;
-      justify-content: center;
-      /* width: 1800px; */
-      position: relative;
-      left: 25%;
-      margin: 2rem;
-  }
-
-  .accordionContainer {
-      flex-basis: 50%;
-      margin-bottom: 2rem;
-      text-align: left;
-  }
+ 
 

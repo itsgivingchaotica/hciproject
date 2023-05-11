@@ -6,19 +6,29 @@ import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlassLocation } from '@fortawesome/free-solid-svg-icons'
 import { Typeahead } from 'react-bootstrap-typeahead';
-import { Link, Routes, Route} from 'react-router-dom'
+import { Link, useNavigate, Routes, Route} from 'react-router-dom'
 import styles from './searchBar.module.css';
 import zipcodesData from '../../../results.json'
 
-export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhood,filterType,setFilterType, userResult,results,searchTerm,setSearchTerm,options,filteredResults,setFilteredResults,setSummaryBanner,setLocationInquiry,zipCodes,setZipCodes}){
+export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhood,filterType,setFilterType, userResult,results,searchTerm,setSearchTerm,options,filteredResults,setFilteredResults,setSummaryBanner,setLocationInquiry,zipCodes,setZipCodes,setNeighborhoodList,neighborhoodList}){
+
+  const [uniqueNeighborhoods,setUniqueNeighborhoods] = useState([]);
+
+  const navigateTo = useNavigate();
   
   useEffect(() => {
         const zipcodes = zipcodesData.results.map(result => ({
           zipcode: result.zipcode
         }));
+        const uniqueValues = [];
+        const nb = zipcodesData.results.map(result => 
+          result.neighborhood
+        );
+        nb.sort();
+        let unique = new Set(nb);
         setZipCodes(zipcodes);
+        setNeighborhoodList(Array.from(unique));
   }, []);
-
     const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
         <a ref={ref}
           onClick={(e) => {
@@ -34,7 +44,8 @@ export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhoo
             />
         </a>
       ));
-      
+
+
     const CustomMenu = React.forwardRef(
         ({ children, style, className, 'aria-labelledby': labeledBy }, ref) => {
           const [value, setValue] = useState('');
@@ -71,50 +82,63 @@ export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhoo
 
     const handleOptionSelect = (eventKey) => {
         setNeighborhood(eventKey);
-        console.log(eventKey);
     }
 
     const handleSearchTermChange = (e) => {
       setSearchTerm(e.target.value);
-      console.log(searchTerm);
     }
 
     const handleZipChange = (e) => {
       setZip(e.target.value);
-      console.log(zip);
     } 
-    
-    console.log(filteredResults);
+    // const neighborhoodList = [
+    //     'Bay Ridge',
+    //     'Bedford-Stuyvesant',
+    //     'Bensonhurst',
+    //     'Boerum Hill',
+    //     'Brooklyn Heights',
+    //     'Bushwick',
+    //     'Carroll Gardens',
+    //     'Cobble Hill',
+    //     'Coney Island',
+    //     'Crown Heights',
+    //     'Downtown Brooklyn',
+    //     'Dumbo',
+    //     'Flatbush',
+    //     'Fort Greene',
+    //     'Greenpoint',
+    //     'Midwood',
+    //     'Park Slope',
+    //     'Prospect Heights',
+    //     'Propsect Lefferts Gardens',
+    //     'Red Hook',
+    //     'Sheepshead Bay',
+    //     'Sunset Park',
+    //     'Williamsburg'
+    //   ];
 
-    const neighborhoodList = [
-        'Bay Ridge',
-        'Bedford-Stuyvesant',
-        'Bensonhurst',
-        'Boerum Hill',
-        'Brooklyn Heights',
-        'Bushwick',
-        'Carroll Gardens',
-        'Cobble Hill',
-        'Coney Island',
-        'Crown Heights',
-        'Downtown Brooklyn',
-        'Dumbo',
-        'Flatbush',
-        'Fort Greene',
-        'Greenpoint',
-        'Midwood',
-        'Park Slope',
-        'Prospect Heights',
-        'Propsect Lefferts Gardens',
-        'Red Hook',
-        'Sheepshead Bay',
-        'Sunset Park',
-        'Williamsburg'
-      ];
-    
+      const handleSearch = (e) => {
+  e.preventDefault();
+  if (searchTerm.trim() !== '') {
+    handleSearchEngine();
+    navigateTo(`/results?query=${searchTerm}`);
+  }
+};
+
+// neighborhoodList.forEach(_neighborhood => {
+//   const neighborhood = _neighborhood.neighborhood;
+//   if (!uniqueValues[neighborhood]) {
+//     uniqueValues[neighborhood] = true;
+//     uniqueNeighborhoods.push(_neighborhood);
+//   }
     return (
         <>
-        <div className={styles.neighborhoods}>
+        <form onSubmit={handleSearch}>
+        <div className={styles.neighborhoods} onKeyDown={(e) => {
+        if (e.key === 'Enter') {
+            handleSearch(e);
+        }
+    }}>
         <InputGroup className="mb-2 mt-4">
         <InputGroup.Text id="inputGroup-sizing-default">
           Search
@@ -126,7 +150,6 @@ export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhoo
           onChange={(e) => handleSearchTermChange(e)}
         />
         </InputGroup>
-
     <InputGroup size="sm" className="mb-3" >
         <InputGroup.Radio 
                 aria-label="Radio button for following text input"
@@ -187,13 +210,15 @@ export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhoo
         <Button 
           variant="success" 
           className={styles.submit}
-          onClick={() => handleSearchEngine()}>
+          onClick={() => handleSearchEngine()}
+          >
             <FontAwesomeIcon icon={faMagnifyingGlassLocation}/>
         </Button>
         </Link>
       </InputGroup>
 
       </div>
+      </form>
       </>
   );
 }

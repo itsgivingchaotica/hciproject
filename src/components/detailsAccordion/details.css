@@ -1,0 +1,24 @@
+.accordion-button {
+    background-color: var(--color-primary) !important;
+    color: white !important;
+}
+
+.accordion-button:hover {
+    background-color: var(--color-highlight) !important;
+    color: var(--color-secondary);
+    color: white !important;
+}
+
+.accordion .item {
+    border-color: var(--color-secondary);
+    /* border-width: 0.2rem; */
+    color:white;
+}
+
+.accordion .item .accordion-header button::after {
+    transition: var(--transition);
+}
+
+.accordion .item .accordion-collapse {
+    transition: var(--transition);
+}

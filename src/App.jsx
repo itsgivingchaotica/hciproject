@@ -3,7 +3,7 @@ import React, { useEffect, useState} from 'react';
 import { ResultDetails } from "./ResultsPage/ResultDetails/ResultDetails.jsx"
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import { SearchBar } from './components/searchbar/SearchBar.jsx'
+import { SearchBar } from './components/searchbar/SearchBar.jsx';
 import { Results } from './ResultsPage/Results/Results.jsx';
 import QuestionsPage  from './QuestionsPage/QuestionsPage.jsx'
 import Fuse from 'fuse.js';
@@ -39,7 +39,6 @@ function App() {
 
   function handleSetName(aname){
     setReviewName(aname);
-    console.log(reviewName + " handled")
   }
 
 const handleUserResult = () => {
@@ -85,8 +84,8 @@ useEffect(() => {
     const [locationInquiry,setLocationInquiry] = useState([]);
 //options to pass to fuse search to search against from json results[]
     const options = {
-      minMatchCharLength: 4,
-      threshold: 0.9,
+      minMatchCharLength: 3,
+      threshold: 0.5,
       shouldSort: true,
       includeMatches: true,
       keys: [
@@ -104,12 +103,24 @@ useEffect(() => {
         // },
         {
           name: "about",
-          weight: 0.1
+          weight: 0.2
         },
         {
           name: "tag",
-          weight: 0.6
+          weight: 0.8
         },
+        {
+          name: "blurb1",
+          weight: 0.2
+        },
+        {
+          name: "blurb2",
+          weight: 0.2
+        },
+        {
+          name: "blurb3",
+          weight: 0.2
+        }
         // {
         //   name: "neighborhood",
         //   weight: 0.1
@@ -136,6 +147,7 @@ useEffect(() => {
   //   }
   // ]
   const [zipCodes, setZipCodes] = useState([]);
+  const [neighborhoodList, setNeighborhoodList] = useState([]);
   const [zip,setZip] = useState("");
 
 const handleQuizResult = (userResult) => {
@@ -143,7 +155,6 @@ const handleQuizResult = (userResult) => {
      const fuse = new Fuse(results,options);
         const frs = fuse.search(userResult).map((result) => result.item);
         setFilteredResults(frs);
-        console.log("filteredresults: " + filteredResults);
         setSearchTerm(userResult);
         let ban = searchTerm;
         setSummaryBanner(ban);
@@ -159,7 +170,6 @@ const handleSearchEngine = () => {
         setZip(zip);
         // setSearchTerm(inquiry); 
         setLocationInquiry(inquiry);
-        console.log("location inquiry: " + inquiry);
         const fuse = new Fuse(results,options);
         const frs = fuse.search(ban).map((result) => result.item);
         setFilteredResults(frs);
@@ -173,11 +183,9 @@ const handleSearchEngine = () => {
         setSummaryBanner(ban);
         setSearchTerm(inquiry); 
         setLocationInquiry(inquiry);
-      console.log("THE INQUIRY: " + inquiry);
         const fuse = new Fuse(results,options);
         const frs = fuse.search(ban).map((result) => result.item);
         setFilteredResults(frs);
-        console.log("filteredresults: " + filteredResults);
         setSearchTerm(ban);
       }
       else{
@@ -185,23 +193,20 @@ const handleSearchEngine = () => {
         setSummaryBanner(ban);
         setSearchTerm(inquiry); 
         setLocationInquiry(inquiry);
-        console.log("THE INQUIRY: " + inquiry);
         const fuse = new Fuse(results,options);
         const frs = fuse.search(ban).map((result) => result.item);
         setFilteredResults(frs);
-        console.log("filteredresults: " + filteredResults);
         setSearchTerm(ban);
       }
       
     }
 
-  console.log(results);
   return (
     <div>
       <Navbar setFilteredResults={setFilteredResults} setSummaryBanner={setSummaryBanner} setDaNeighborhood={setDaNeighborhood} setSearchTerm={setSearchTerm}/>
       <div>
         <div className="formatSearch">
-            <SearchBar filterType={filterType} setFilterType={setFilterType} neighborhood={daneighborhood} setNeighborhood={setNeighborhood} handleSearchEngine={handleSearchEngine} zipCodes={zipCodes} setZipCodes={setZipCodes} zip={zip} setZip={setZip} userResult={userResult} searchTerm={searchTerm} setSearchTerm={setSearchTerm} filteredResults={filteredResults} setFilteredResults={setFilteredResults} options={options} results={results} setSummaryBanner={setSummaryBanner} setLocationInquiry={setLocationInquiry}/>
+            <SearchBar filterType={filterType} setFilterType={setFilterType} neighborhood={daneighborhood} setNeighborhood={setNeighborhood} handleSearchEngine={handleSearchEngine} zipCodes={zipCodes} setZipCodes={setZipCodes} zip={zip} setZip={setZip} userResult={userResult} searchTerm={searchTerm} setSearchTerm={setSearchTerm} filteredResults={filteredResults} setFilteredResults={setFilteredResults} options={options} results={results} setSummaryBanner={setSummaryBanner} setLocationInquiry={setLocationInquiry} setNeighborhoodList={setNeighborhoodList} neighborhoodList={neighborhoodList}/>
           </div>
           {}
       </div>

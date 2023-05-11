@@ -24,7 +24,7 @@ function Header() {
                 </ul>
                 <ul className="places">    
                     <li>Gyms</li>
-                    <li>And more</li>
+                    <li>...and more</li>
                 </ul>    
 
                 <h2 className="cta-text">You will easily find something to destress</h2>

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "./resourcespage.css";
+import "./resourcespage.module.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Accordion} from "react-bootstrap";
@@ -10,8 +10,8 @@ function ResourcesPage({accordionItems}){
 
         <h1 className="heading">Helplines</h1>
 
-        <h1 className="subheading">Experiencing a crisis? Try these resources if our suggested locations/events are not
-        enough and you feel the need to talk to someone:</h1>
+        <h2 className="subheading">Experiencing a crisis? Try these resources if our suggested locations/events are not
+        enough and you feel the need to talk to someone:</h2>
 
         <Accordion defaultActiveKey="0" className="mt-4 p-2">
 

@@ -5,15 +5,12 @@ import { Map } from './Map.jsx'
 export function MapLoader({latitude,longitude,focus}){
 
 const { isLoaded } = useLoadScript({ googleMapsApiKey: "AIzaSyAzOtJRseSi5uOc2YVLEo7DMe8cLxuSrvI"})
-console.log(latitude);
-console.log(parseFloat(latitude));
 
 const [pLatitude, setPLatitude] = useState(parseFloat(latitude));
 const [pLongitude, setPLongitude] = useState(parseFloat(longitude));
 
 useEffect(() => {
     setPLatitude(parseFloat(latitude));
-    console.log("effecteed lat " +  latitude);
     setPLongitude(parseFloat(longitude));
   }, [latitude, longitude]);
 

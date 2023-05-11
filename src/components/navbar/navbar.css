@@ -1,7 +1,8 @@
 nav{
     /* background-color: #49b884; */
     /* background-color: cadetblue; */
-    background-color: var(--color-primary);
+    /* background-color: var(--color-primary); */
+    background-color: var(--color-main);
     height: 4rem;
     border-bottom: solid;
     /* border-color: #49b884; */
@@ -25,6 +26,8 @@ nav{
     color: white;
     text-decoration: none;
     font-weight: 700;
+    font-family: 'Klee One', cursive;
+    /* font-family: 'Mynerve', cursive; */
 }
 
 .title a{
@@ -33,11 +36,22 @@ nav{
 }
 
 .title a:hover{
-    color: var(--color-secondary);
-    cursor:pointer;
+    /* color: var(--color-secondary); */
+    color: var(--color-highlight);
+    cursor: pointer;
+    text-shadow:
+            -1px -1px 0 black,
+            /* Top-left shadow */
+            1px -1px 0 black,
+            /* Top-right shadow */
+            -1px 1px 0 black,
+            /* Bottom-left shadow */
+            1px 1px 0 black;
+        /* Bottom-right shadow */
+        /* bottom: 24%; */
 }
 
-#logo{
+#infinity-logo{
     font-weight: 900;
     font-size: 5rem;
     color: white;
@@ -46,15 +60,21 @@ nav{
     left: 29%; */
     position: absolute;
     left: 46%;
-    top: -30px;
+    top: -10px;
     /* text-align: center; */
     display: inline;
-    /* bottom: 24%; */
 }
 
-#logo:hover{
-    color: var(--color-secondary);
+#infinity-logo:hover{
+    color: var(--color-highlight) !important;
     cursor: pointer; 
+    stroke: black;
+    stroke-width: 6;
+}
+
+.infinity-outline:hover{
+    border: 1px solid black;
+    border-color: black;
 }
 
 .resources-link{
@@ -69,8 +89,18 @@ nav{
 }
 
 .resources-link:hover{
-    color: var(--color-secondary);
+    color: var(--color-highlight);
     cursor: pointer; 
+    text-shadow:
+            -1px -1px 0 black,
+            /* Top-left shadow */
+            1px -1px 0 black,
+            /* Top-right shadow */
+            -1px 1px 0 black,
+            /* Bottom-left shadow */
+            1px 1px 0 black;
+        /* Bottom-right shadow */
+        /* bottom: 24%; */
 }
 
 .explore-link{
@@ -85,8 +115,18 @@ nav{
 }
 
 .explore-link:hover{
-    color: var(--color-secondary);
-    cursor: pointer; 
+    color: var(--color-highlight);
+    cursor: pointer;
+    text-shadow:
+            -1px -1px 0 black,
+            /* Top-left shadow */
+            1px -1px 0 black,
+            /* Top-right shadow */
+            -1px 1px 0 black,
+            /* Bottom-left shadow */
+            1px 1px 0 black;
+        /* Bottom-right shadow */
+        /* bottom: 24%; */
 }
 
 .survey-link{
@@ -101,8 +141,18 @@ nav{
 }
 
 .survey-link:hover{
-    color: var(--color-secondary);
+    color: var(--color-highlight);
     cursor: pointer; 
+    text-shadow:
+            -1px -1px 0 black,
+            /* Top-left shadow */
+            1px -1px 0 black,
+            /* Top-right shadow */
+            -1px 1px 0 black,
+            /* Bottom-left shadow */
+            1px 1px 0 black;
+        /* Bottom-right shadow */
+        /* bottom: 24%; */
 }
 
 /* a:hover{ 

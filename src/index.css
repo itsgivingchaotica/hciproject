@@ -14,14 +14,14 @@
 
 :root{
   /* --color-secondary: #65b4be; */
-  --color-primary: cadetblue;
+  /* --color-main: cadetblue; */
   /* --color-primary: rgb(10, 144, 151); */
+  --color-main: #004c53;
   --color-primary: rgb(0, 146, 154);
-
   /* --color-primary: rgb(95, 137, 160); */
   /* --color-secondary: cadetblue; */
   --color-secondary: black;
-
+  --color-highlight: #1FAA9F;
   --transition: all 400ms ease;
 }
 
