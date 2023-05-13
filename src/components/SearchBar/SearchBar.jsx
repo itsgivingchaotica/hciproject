@@ -13,7 +13,7 @@ import zipcodesData from '../../../results.json'
 export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhood,filterType,setFilterType, userResult,results,searchTerm,setSearchTerm,options,filteredResults,setFilteredResults,setSummaryBanner,setLocationInquiry,zipCodes,setZipCodes,setNeighborhoodList,neighborhoodList}){
 
   const [uniqueNeighborhoods,setUniqueNeighborhoods] = useState([]);
-
+  const [selectedNeighborhood,setSelectedNeighborhood] = useState('New York City');
   const navigateTo = useNavigate();
   
   useEffect(() => {
@@ -29,16 +29,18 @@ export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhoo
         setZipCodes(zipcodes);
         setNeighborhoodList(Array.from(unique));
   }, []);
-    const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
+
+    const NeighborhoodToggle = React.forwardRef(({ children, onClick }, ref) => (
         <a ref={ref}
           onClick={(e) => {
             e.preventDefault();
             onClick(e);
           }}
         >
+          {/* neighborhood placeholder updates immediately*/}
             <Form.Control
             className={styles.forms}
-                placeholder={neighborhood}
+                placeholder={selectedNeighborhood}
                 aria-label="Default"
                 aria-describedby="inputGroup-sizing-default"
             />
@@ -81,7 +83,10 @@ export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhoo
     }
 
     const handleOptionSelect = (eventKey) => {
-        setNeighborhood(eventKey);
+      setSelectedNeighborhood(eventKey);
+      setNeighborhood(eventKey);
+        console.log(eventKey);
+        console.log(neighborhood);
     }
 
     const handleSearchTermChange = (e) => {
@@ -164,8 +169,8 @@ export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhoo
             </InputGroup.Text>
         {filterType === 'in' && (
               <Dropdown onSelect={handleOptionSelect}>
-              <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
-                {neighborhood}
+              <Dropdown.Toggle as={NeighborhoodToggle} id="dropdown-custom-components">
+                {selectedNeighborhood} 
               </Dropdown.Toggle>
               <Dropdown.Menu as={CustomMenu} style={{ maxHeight: "200px", overflowY: "scroll" }}> 
                 {neighborhoodList.map(_neighborhood => (
