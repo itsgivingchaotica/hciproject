@@ -50,3 +50,11 @@
 ._width_tiupn_38{
     border: solid 1px black;
 }
+
+@media only screen and (max-width: 1200px) {
+    .width {
+        width: 250px;
+        left: 600px;
+    }
+
+}
