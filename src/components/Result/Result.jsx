@@ -71,11 +71,58 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
         setReviewLatitude(latitude);
         setReviewLongitude(longitude)
     }
+    const handleSetNameWrapper = (event) => {
+    const { nombre, zip, photo1, photo2, photo3, latitude, longitude, Address1, Address2, website, telephone, neighborhood, tag, blurb1, blurb2, blurb3, about } = result;
+    if (event.type === 'click') {
+      handleSetName(
+        nombre,
+        zip,
+        photo1,
+        photo2,
+        photo3,
+        latitude,
+        longitude,
+        Address1,
+        Address2,
+        website,
+        telephone,
+        neighborhood,
+        tag,
+        blurb1,
+        blurb2,
+        blurb3,
+        about
+      );
+    } else if (event.type === 'keydown') {
+      if (event.keyCode === 13) { // Enter key
+        handleSetName(
+          nombre,
+          zip,
+          photo1,
+          photo2,
+          photo3,
+          latitude,
+          longitude,
+          Address1,
+          Address2,
+          website,
+          telephone,
+          neighborhood,
+          tag,
+          blurb1,
+          blurb2,
+          blurb3,
+          about
+        );
+      }
+    }
+  };
+    
 
     return (
         <div className = {styles.result}>
             <Link to={`/results/${result.id}`} key={result.id}>
-            <img src={result.photo1} alt="result image" className={styles['result-image']} onClick={() => handleSetName(result.name,result.zipcode,result.photo1,result.photo2,result.photo3,result.latitude,result.longitude,result.Address1,result.Address2,result.website,result.telephone,result.neighborhood,result.tag,result.blurb1,result.blurb2,result.blurb3,result.about)}></img></Link>
+            <img src={result.photo1} alt="result image" className={styles['result-image']} onClick={handleSetNameWrapper} onKeyDown={handleSetNameWrapper}></img></Link>
                 <div className={styles.info} onClick={() => handleCardClick(result.latitude,result.longitude)}>
                      <Card className={ styles.address }>
                         <Card.Header>
