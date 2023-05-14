@@ -122,7 +122,7 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
     return (
         <div className = {styles.result}>
             <Link to={`/results/${result.id}`} key={result.id}>
-            <img src={result.photo1} alt="result image" className={styles['result-image']} onClick={handleSetNameWrapper} onKeyDown={handleSetNameWrapper}></img></Link>
+            <img src={result.photo1} alt={`${result.name} clickable result image`} className={styles['result-image']} onClick={handleSetNameWrapper} onKeyDown={handleSetNameWrapper}></img></Link>
                 <div className={styles.info} onClick={() => handleCardClick(result.latitude,result.longitude)}>
                      <Card className={ styles.address }>
                         <Card.Header>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './resultdetails.module.css';
+import { DetailsCard } from "../../components/detailsCard/DetailsCard.jsx"
 import { DetailsAccordion } from "../../components/detailsAccordion/DetailsAccordion.jsx"
 import { MapLoader } from "../../components/map/MapLoader.jsx"
 import { LocationCarousel } from "../../components/locationCarousel/LocationCarousel.jsx"
@@ -30,8 +31,9 @@ export function ResultDetails(props){
       <MapLoader focus={15} longitude={reviewLongitude} latitude={reviewLatitude}/>
       </div>
       
-      <div className={styles.accordionContainer}>
-      <DetailsAccordion id={id} Address1={Address1} Address2={Address2} zipCode={zipCode} telephone={telephone} website={website} about={about}/>
+      <div className={styles.cardContainer}>
+      {/* <DetailsAccordion id={id} Address1={Address1} Address2={Address2} zipCode={zipCode} telephone={telephone} website={website} about={about}/> */}
+      <DetailsCard id={id} reviewName={reviewName} Address1={Address1} Address2={Address2} zipCode={zipCode} telephone={telephone} website={website} about={about}/>
       </div>
       </div>
     </div>

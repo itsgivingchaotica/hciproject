@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState} from 'react';
 import { ResultDetails } from "./ResultsPage/ResultDetails/ResultDetails.jsx"
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import { SearchBar } from './components/SearchBar/SearchBar.jsx';
 import { Results } from './ResultsPage/Results/Results.jsx';
@@ -40,10 +40,6 @@ function App() {
   function handleSetName(aname){
     setReviewName(aname);
   }
-
-const handleUserResult = () => {
-
-}
 
 useEffect(() => {
     // Extract relevant data from `resultItems` using map
@@ -201,9 +197,13 @@ const handleSearchEngine = () => {
       
     }
 
+    const handleNavbarLinkClick = () => {
+    setSearchTerm('');
+  };
+
   return (
     <div>
-      <Navbar setFilteredResults={setFilteredResults} setSummaryBanner={setSummaryBanner} setDaNeighborhood={setDaNeighborhood} setSearchTerm={setSearchTerm}/>
+      <Navbar handleNavbarLinkClick={handleNavbarLinkClick} setFilteredResults={setFilteredResults} setSummaryBanner={setSummaryBanner} setDaNeighborhood={setDaNeighborhood} setSearchTerm={setSearchTerm}/>
       <div className="formatSearch">
         <div>
             <SearchBar filterType={filterType} setFilterType={setFilterType} neighborhood={daneighborhood} setNeighborhood={setNeighborhood} handleSearchEngine={handleSearchEngine} zipCodes={zipCodes} setZipCodes={setZipCodes} zip={zip} setZip={setZip} userResult={userResult} searchTerm={searchTerm} setSearchTerm={setSearchTerm} filteredResults={filteredResults} setFilteredResults={setFilteredResults} options={options} results={results} setSummaryBanner={setSummaryBanner} setLocationInquiry={setLocationInquiry} setNeighborhoodList={setNeighborhoodList} neighborhoodList={neighborhoodList}/>

@@ -26,16 +26,16 @@ export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhoo
         );
         nb.sort();
         let unique = new Set(nb);
-        setZipCodes(zipcodes);
         setNeighborhoodList(Array.from(unique));
   }, []);
 
     const NeighborhoodToggle = React.forwardRef(({ children, onClick }, ref) => (
-        <a ref={ref}
-          onClick={(e) => {
-            e.preventDefault();
-            onClick(e);
-          }}
+        <div ref={ref}
+         onClick={(e) => {
+        e.preventDefault();
+        onClick(e);
+      }}
+      
         >
           {/* neighborhood placeholder updates immediately*/}
             <Form.Control
@@ -44,38 +44,39 @@ export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhoo
                 aria-label="Default"
                 aria-describedby="inputGroup-sizing-default"
             />
-        </a>
+        </div>
       ));
 
 
     const CustomMenu = React.forwardRef(
-        ({ children, style, className, 'aria-labelledby': labeledBy }, ref) => {
-          const [value, setValue] = useState('');
-      
-          return (
-            <div
-              ref={ref}
-              style={style}
-              className={className}
-              aria-labelledby={labeledBy}
-            >
-              <Form.Control
-                autoFocus
-                className="mx-2 my-2 w-auto"
-                placeholder="Type to filter..."
-                onChange={(e) => setValue(e.target.value)}
-                value={value}
-              />
-              <ul className="">
-                {React.Children.toArray(children).filter(
-                  (child) =>
-                    !value || child.props.children.toLowerCase().startsWith(value.toLowerCase()),
-                )}
-              </ul>
-            </div>
-          );
-        },
-      );
+  ({ children, style, className, 'aria-labelledby': labeledBy }, ref) => {
+    const [value, setValue] = useState('');
+
+    const filteredChildren = React.Children.toArray(children).filter(
+      (child) =>
+        !value || child.props.children.toLowerCase().startsWith(value.toLowerCase())
+    );
+
+    return (
+      <div ref={ref} style={style} className={className} aria-labelledby={labeledBy}>
+        <Form.Control
+          autoFocus
+          className="mx-2 my-2 w-auto"
+          placeholder="Type to filter..."
+          onChange={(e) => setValue(e.target.value)}
+          value={value}
+        />
+        <ul className="">
+          {filteredChildren.length > 0 ? (
+            filteredChildren
+          ) : (
+            <div>No results found</div>
+          )}
+        </ul>
+      </div>
+    );
+  }
+);
         
     const handleOptionChange = () => {
       const newFilterType = filterType === "near" ? "in" : "near";
@@ -129,7 +130,6 @@ export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhoo
     navigateTo(`/results?query=${searchTerm}`);
   }
 };
-
 // neighborhoodList.forEach(_neighborhood => {
 //   const neighborhood = _neighborhood.neighborhood;
 //   if (!uniqueValues[neighborhood]) {
@@ -150,6 +150,7 @@ export function SearchBar({setZip,handleSearchEngine,neighborhood,setNeighborhoo
         </InputGroup.Text>
         <Form.Control
           placeholder="parks, museums, theaters..."
+          value={searchTerm}
           aria-label="Text input with radio button"
           aria-describedby="inputGroup-sizing-default"
           onChange={(e) => handleSearchTermChange(e)}

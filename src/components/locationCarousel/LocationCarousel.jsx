@@ -13,6 +13,8 @@ export function LocationCarousel(props) {
           className={styles.photos}
           src={photoOneUrl}
           alt="First slide"
+          object-fit="contain"
+          object-position="center"
         />
         <Carousel.Caption className={styles.blurb}>
           <h3>{reviewName}</h3>
