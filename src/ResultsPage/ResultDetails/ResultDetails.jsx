@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './resultdetails.module.css';
 import { DetailsCard } from "../../components/detailsCard/DetailsCard.jsx"
-import { DetailsAccordion } from "../../components/detailsAccordion/DetailsAccordion.jsx"
 import { MapLoader } from "../../components/map/MapLoader.jsx"
 import { LocationCarousel } from "../../components/locationCarousel/LocationCarousel.jsx"
 

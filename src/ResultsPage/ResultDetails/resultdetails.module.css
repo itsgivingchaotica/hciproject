@@ -16,6 +16,7 @@
       flex-basis: 50%;
       text-align: left;
       margin-left: 15rem !important;
+      margin-right: 2rem !important;
       margin: 2rem;
   }
 
@@ -39,36 +40,88 @@
        }
    }
 
-  @media screen and (min-width: 800px) and (max-width: 1200px) {
-      .cardContainer {
-          width: 20%;
+   @media screen and (min-width: 700px) and (max-width: 800px) {
+       .cardContainer {
+           /* Define the desired size for CardDetails component */
+        width: 20%;
+        margin-left: 10rem !important;
+       }
+       .mapContainer{
+        margin-left: -5rem !important;
+       }
+    }
+
+         @media screen and (min-width: 800px) and (max-width: 900px) {
+             .infoContainer {
+                 display: block;
+             }
+    
+             .cardContainer {
+                 width: 15%;
+                 margin-left: 22rem !important;
+             }
+    
+             .mapContainer {
+                 margin-left: -5rem;
+                 width: 100%;
+                 margin-right: 5rem !important;
+             }
+         }
+
+        @media screen and (min-width: 900px) and (max-width: 1000px) {
+            .infoContainer {
+                display: block;
+            }
+    
+            .cardContainer {
+                width: 15%;
+                margin-left: 25rem !important;
+            }
+    
+            .mapContainer {
+                margin-left: -5rem;
+                width: 100%;
+                margin-right: 5rem !important;
+            }
+        }
+
+  @media screen and (min-width: 1000px) and (max-width: 1200px) {
+    .infoContainer {
+            display: block;
+        }
+    .cardContainer {
+          width: 15%;
+          margin-left: 32.5rem !important;
+      }
+      .mapContainer {
+        margin-left: -5rem;
+        width: 100%;
+        margin-right: 5rem !important;
       }
   }
 
   @media screen and (min-width: 1200px) and (max-width: 1400px) {
-      .cardContainer {
+    .cardContainer {
           /* Define the desired size for CardDetails component */
           width: 30%;
       }
-  }
+      }
+  
 
-  @media screen and (max-width:800px){
+  @media screen and (min-width: 600px) and (max-width:700px){
     .infoContainer{
         display: block;
+        margin-right: 14rem;
     }
     .mapContainer{
         display: block;
         position: relative;
-        margin: 0;
+        margin-left: -5rem;
         width: 100%;
     }
 
-    .accordionContainer{
-        display: block;
-        position: relative;
-        right: 1rem;
-        top: 16rem;
-        width: 100%;
-        margin-left: 0;
+    .cardContainer{
+        width: 0%;
+        margin-left: 5rem !important;
     }
   }
