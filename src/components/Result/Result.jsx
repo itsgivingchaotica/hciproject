@@ -49,7 +49,7 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
     
     }
 
-    const handleSetName = (nombre,zip,photo1,photo2,photo3,latitude,longitude,Address1,Address2,website,telephone,neighborhood,tag,blurb1,blurb2,blurb3,about) => {
+    const handleSetName = (nombre,zip,photo1,photo2,photo3,altText1,altText2,altText3,latitude,longitude,Address1,Address2,website,telephone,neighborhood,tag,blurb1,blurb2,blurb3,about) => {
         setReviewName(nombre);
         console.log(nombre + " " + photo1 + " " + zip + " is hte handledrs")
         setZipcode(zip);
