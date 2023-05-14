@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import styles from './result.module.css';
-import { Card } from 'react-bootstrap'
+import { Card, OverlayTrigger,Tooltip } from 'react-bootstrap'
 import Placeholder from 'react-bootstrap/Placeholder';
 import { HashRouter as Router, Link, Routes, Route} from 'react-router-dom'
 import { LocationRating } from '../rating/Rating.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'
-import { ResultDetails } from '../../ResultsPage/ResultDetails/ResultDetails.jsx'
 
 export function Result({result, results, reviewName, setReviewName,setZipcode,setPhoto1,setPhoto2,setPhoto3,setAddress1,setAddress2,setWebsite,setTelephone,setNeighborhood,setTag,setBlurb1,setBlurb2,setBlurb3,setAbout, setSummaryBanner,setReviewLatitude,setReviewLongitude}){
     const [isLoading, setIsLoading] = useState(true);
@@ -16,6 +15,12 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
             setIsLoading(false);
         }, 2000); // set the delay time to 2 seconds
     }, []);
+
+    const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Go to details
+    </Tooltip>
+  );
 
     // if isLoading is true, render the skeleton card
     if (isLoading) {
@@ -129,7 +134,13 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
                             <LocationRating rating={result.rating}/>
                         </Card.Header>
                                 <Card.Body>
-                                    <Card.Title className ={styles.share}> {result.name} <br/> <Link to={`/results/${result.id}`} onClick={() => handleSetName(result.name,result.zipcode,result.photo1,result.photo2,result.photo3,result.latitude,result.longitude,result.Address1,result.Address2,result.website,result.telephone,result.neighborhood,result.tag,result.blurb1,result.blurb2,result.blurb3,result.about)}><FontAwesomeIcon icon={faAnglesRight}/></Link>
+                                    <Card.Title className ={styles.share}> {result.name} <br/> <Link to={`/results/${result.id}`} onClick={() => handleSetName(result.name,result.zipcode,result.photo1,result.photo2,result.photo3,result.latitude,result.longitude,result.Address1,result.Address2,result.website,result.telephone,result.neighborhood,result.tag,result.blurb1,result.blurb2,result.blurb3,result.about)}>
+                                     <OverlayTrigger
+                                        placement="right"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={renderTooltip}
+                                    ><FontAwesomeIcon icon={faAnglesRight}/></OverlayTrigger>
+                                    </Link>
                                     </Card.Title>
                                     {/* <Routes>
                                     <Route path="/results/:id" element={<ResultDetails result={result}/>} />
