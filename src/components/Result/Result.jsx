@@ -7,7 +7,7 @@ import { LocationRating } from '../rating/Rating.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'
 
-export function Result({result, results, reviewName, setReviewName,setZipcode,setPhoto1,setPhoto2,setPhoto3,setAddress1,setAddress2,setWebsite,setTelephone,setNeighborhood,setTag,setBlurb1,setBlurb2,setBlurb3,setAbout, setSummaryBanner,setReviewLatitude,setReviewLongitude}){
+export function Result({result, results, reviewName, setReviewName,setZipcode,setPhoto1,setPhoto2,setPhoto3,setAltText1,setAltText2,setAltText3,setAddress1,setAddress2,setWebsite,setTelephone,setNeighborhood,setTag,setBlurb1,setBlurb2,setBlurb3,setAbout, setSummaryBanner,setReviewLatitude,setReviewLongitude}){
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -56,6 +56,9 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
         setPhoto1(photo1);
         setPhoto2(photo2);
         setPhoto3(photo3);
+        setAltText1(altText1);
+        setAltText2(altText2);
+        setAltText3(altText3);
         setAddress1(Address1);
         setAddress2(Address2);
         setWebsite(website);
@@ -66,8 +69,6 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
         setBlurb2(blurb2);
         setBlurb3(blurb3);
         setAbout(about);
-        console.log(latitude);
-        console.log(longitude + " were the lat and long ");
         setReviewLatitude(latitude);
         setReviewLongitude(longitude);
         setSummaryBanner(nombre);
@@ -77,7 +78,7 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
         setReviewLongitude(longitude)
     }
     const handleSetNameWrapper = (event) => {
-    const { nombre, zip, photo1, photo2, photo3, latitude, longitude, Address1, Address2, website, telephone, neighborhood, tag, blurb1, blurb2, blurb3, about } = result;
+    const { nombre, zip, photo1, photo2, photo3, altText1, altText2, altText3, latitude, longitude, Address1, Address2, website, telephone, neighborhood, tag, blurb1, blurb2, blurb3, about } = result;
     if (event.type === 'click') {
       handleSetName(
         nombre,
@@ -85,6 +86,9 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
         photo1,
         photo2,
         photo3,
+        altText1,
+        altText2,
+        altText3,
         latitude,
         longitude,
         Address1,
@@ -106,6 +110,9 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
           photo1,
           photo2,
           photo3,
+          altText1,
+          altText2,
+          altText3,
           latitude,
           longitude,
           Address1,
@@ -127,14 +134,14 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
     return (
         <div className = {styles.result}>
             <Link to={`/results/${result.id}`} key={result.id}>
-            <img src={result.photo1} alt={`${result.name} clickable result image`} className={styles['result-image']} onClick={handleSetNameWrapper} onKeyDown={handleSetNameWrapper}></img></Link>
+            <img src={result.photo1} alt={`${result.altText1} clickable result image`} className={styles['result-image']} onClick={handleSetNameWrapper} onKeyDown={handleSetNameWrapper}></img></Link>
                 <div className={styles.info} onClick={() => handleCardClick(result.latitude,result.longitude)}>
                      <Card className={ styles.address }>
                         <Card.Header>
                             <LocationRating rating={result.rating}/>
                         </Card.Header>
                                 <Card.Body>
-                                    <Card.Title className ={styles.share}> {result.name} <br/> <Link to={`/results/${result.id}`} onClick={() => handleSetName(result.name,result.zipcode,result.photo1,result.photo2,result.photo3,result.latitude,result.longitude,result.Address1,result.Address2,result.website,result.telephone,result.neighborhood,result.tag,result.blurb1,result.blurb2,result.blurb3,result.about)}>
+                                    <Card.Title className ={styles.share}> {result.name} <br/> <Link to={`/results/${result.id}`} onClick={() => handleSetName(result.name,result.zipcode,result.photo1,result.photo2,result.photo3,result.altText1,result.altText2,result.altText3,result.latitude,result.longitude,result.Address1,result.Address2,result.website,result.telephone,result.neighborhood,result.tag,result.blurb1,result.blurb2,result.blurb3,result.about)}>
                                      <OverlayTrigger
                                         placement="right"
                                         delay={{ show: 250, hide: 400 }}
@@ -142,9 +149,6 @@ export function Result({result, results, reviewName, setReviewName,setZipcode,se
                                     ><FontAwesomeIcon icon={faAnglesRight}/></OverlayTrigger>
                                     </Link>
                                     </Card.Title>
-                                    {/* <Routes>
-                                    <Route path="/results/:id" element={<ResultDetails result={result}/>} />
-                                    </Routes> */}
                                 <Card.Text>
                                 {result.neighborhood}
                                 </Card.Text>

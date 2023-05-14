@@ -4,7 +4,7 @@ import styles from '../result/result.module.css';
 
 export function LocationCarousel(props) {
 
-  const { reviewName, photoOne, photoTwo, photoThree, blurb1, blurb2, blurb3, photoOneUrl, photoTwoUrl, photoThreeUrl} = props;
+  const { reviewName, photoOne, photoTwo, photoThree, altText1, altText2, altText3, blurb1, blurb2, blurb3, photoOneUrl, photoTwoUrl, photoThreeUrl} = props;
     
     return (
         <Carousel fade>
@@ -12,7 +12,7 @@ export function LocationCarousel(props) {
         <img
           className={styles.photos}
           src={photoOneUrl}
-          alt="First slide"
+          alt={altText1}
           object-fit="contain"
           object-position="center"
         />
@@ -26,7 +26,7 @@ export function LocationCarousel(props) {
         <img
           className={styles.photos}
           src={photoTwoUrl}
-          alt="Second slide"
+          alt={altText2}
         />
         <Carousel.Caption className={styles.blurb}>
           <h3>{reviewName}</h3>
@@ -38,7 +38,7 @@ export function LocationCarousel(props) {
         <img
           className={styles.photos}
           src={photoThreeUrl}
-          alt="Third slide"
+          alt={altText3}
         />
 
         <Carousel.Caption className={styles.blurb}>

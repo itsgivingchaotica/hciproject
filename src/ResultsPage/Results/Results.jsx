@@ -6,7 +6,7 @@ import { MapLoader } from "../../components/map/MapLoader.jsx";
 import { Banner } from '../../components/banner/Banner.jsx'
 
 
-export function Results({zip,daneighborhood,userResult,results,filteredResults,business,searchTerm,setSummaryBanner,reviewName,setReviewName,handleSetName,setZipcode,setPhoto1,setPhoto2,setPhoto3,setAddress1,setAddress2,setWebsite,setTelephone,setNeighborhood,setTag,setBlurb1,setBlurb2,setBlurb3,setAbout,reviewLatitude,reviewLongitude,setReviewLatitude,setReviewLongitude,summaryBanner,locationInquiry}){
+export function Results({zip,daneighborhood,userResult,results,filteredResults,business,searchTerm,setSummaryBanner,reviewName,setReviewName,handleSetName,setZipcode,setPhoto1,setPhoto2,setPhoto3,setAltText1,setAltText2,setAltText3,setAddress1,setAddress2,setWebsite,setTelephone,setNeighborhood,setTag,setBlurb1,setBlurb2,setBlurb3,setAbout,reviewLatitude,reviewLongitude,setReviewLatitude,setReviewLongitude,summaryBanner,locationInquiry}){
 
 const [alias,setAlias] = useState("");
 const [withTop, setWithTop] = useState(150);
@@ -40,12 +40,12 @@ useEffect(() => {
                 
           <br></br>
                     {filteredResults == "" ? (results.map(result => (
-                            <Result  className={styles.place} key={result.id} result={result} setAlias={setAlias} alias={alias} reviewName={reviewName} setReviewName={setReviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1} setPhoto2={setPhoto2} setPhoto3={setPhoto3} 
+                            <Result  className={styles.place} key={result.id} result={result} setAlias={setAlias} alias={alias} reviewName={reviewName} setReviewName={setReviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1} setPhoto2={setPhoto2} setPhoto3={setPhoto3} setAltText1={setAltText1} setAltText2={setAltText2} setAltText3={setAltText3}
                             setAddress1={setAddress1} setAddress2={setAddress2} setWebsite={setWebsite} setTelephone={setTelephone} setNeighborhood={setNeighborhood} setTag={setTag} setBlurb1={setBlurb1} setBlurb2={setBlurb2} setBlurb3={setBlurb3} setAbout={setAbout}
                             setSummaryBanner={setSummaryBanner} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude}/>
                     ))) :(
                     filteredResults.map(result => (
-                            <Result className={styles.place} key={result.id} result={result} setAlias={setAlias} alias={alias} reviewName={reviewName} setReviewName={setReviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1} setPhoto2={setPhoto2} setPhoto3={setPhoto3} 
+                            <Result className={styles.place} key={result.id} result={result} setAlias={setAlias} alias={alias} reviewName={reviewName} setReviewName={setReviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1} setPhoto2={setPhoto2} setPhoto3={setPhoto3} setAltText1={setAltText1} setAltText2={setAltText2} setAltText3={setAltText3}
                             setAddress1={setAddress1} setAddress2={setAddress2} setWebsite={setWebsite} setTelephone={setTelephone} setNeighborhood={setNeighborhood} setTag={setTag} setBlurb1={setBlurb1} setBlurb2={setBlurb2} setBlurb3={setBlurb3} setAbout={setAbout}
                             setSummaryBanner={setSummaryBanner} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude}/>
                     )))}

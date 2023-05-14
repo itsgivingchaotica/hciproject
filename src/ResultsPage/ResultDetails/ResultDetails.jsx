@@ -9,14 +9,14 @@ export function ResultDetails(props){
 
   const { id } = useParams();
 
-  const { reviewName, photoOne, photoTwo, photoThree, zipCode, reviewLongitude, reviewLatitude, Address1, Address2, website, telephone, neighborhood, tag, blurb1, blurb2, blurb3, about} = props;
+  const { reviewName, photoOne, photoTwo, photoThree, altText1, altText2, altText3, zipCode, reviewLongitude, reviewLatitude, Address1, Address2, website, telephone, neighborhood, tag, blurb1, blurb2, blurb3, about} = props;
 
   return (
 
     <div className={styles.resultsDetails}>
       
       <div>
-      <LocationCarousel reviewName={reviewName} blurb1={blurb1} blurb2={blurb2} blurb3={blurb3} about={about} photoOneUrl={photoOne} photoTwoUrl={photoTwo} photoThreeUrl={photoThree}/>
+      <LocationCarousel reviewName={reviewName} blurb1={blurb1} blurb2={blurb2} blurb3={blurb3} about={about} photoOneUrl={photoOne} photoTwoUrl={photoTwo} photoThreeUrl={photoThree} altText1={altText1} altText2={altText2} altText3={altText3}/>
       </div>
 
     <div className={styles.locationinfo}>
@@ -31,7 +31,6 @@ export function ResultDetails(props){
       </div>
       
       <div className={styles.cardContainer}>
-      {/* <DetailsAccordion id={id} Address1={Address1} Address2={Address2} zipCode={zipCode} telephone={telephone} website={website} about={about}/> */}
       <DetailsCard id={id} reviewName={reviewName} Address1={Address1} Address2={Address2} zipCode={zipCode} telephone={telephone} website={website} about={about}/>
       </div>
       </div>

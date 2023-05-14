@@ -21,6 +21,9 @@ function App() {
   const [photoOne, setPhoto1] = useState("");
   const [photoTwo, setPhoto2] = useState("");
   const [photoThree, setPhoto3] = useState("");
+  const [altText1, setAltText1] = useState("");
+  const [altText2, setAltText2] = useState("");
+  const [altText3, setAltText3] = useState("");
   const [Address1,setAddress1] = useState("");
   const [Address2,setAddress2] = useState("");
   const [website,setWebsite] = useState("");
@@ -36,6 +39,9 @@ function App() {
   const [reviewLongitude,setReviewLongitude]=useState('-73.95238020363617')
   const [filterType,setFilterType] = useState("near");
   const [daneighborhood,setDaNeighborhood] = useState("New York City");
+  const [zipCodes, setZipCodes] = useState([]);
+  const [neighborhoodList, setNeighborhoodList] = useState([]);
+  const [zip,setZip] = useState("");
 
   function handleSetName(aname){
     setReviewName(aname);
@@ -54,6 +60,9 @@ useEffect(() => {
       photo1: result.photo1,
       photo2: result.photo2,
       photo3: result.photo3,
+      altText1: result.altText1,
+      altText2: result.altText2,
+      altText3: result.altText3,
       Address1: result.Address1,
       Address2: result.Address2,
       website: result.website,
@@ -89,14 +98,10 @@ useEffect(() => {
         name: "name",
         weight: 0.2
         },
-        // {
-        //   name: "alias",
-        //   weight: 0.02
-        // },
-        // {
-        //   name: "zipcode",
-        //   weight: 0.01
-        // },
+        {
+          name: "zipcode",
+          weight: 0.01
+        },
         {
           name: "about",
           weight: 0.2
@@ -117,34 +122,8 @@ useEffect(() => {
           name: "blurb3",
           weight: 0.2
         }
-        // {
-        //   name: "neighborhood",
-        //   weight: 0.1
-        // },
-        // {
-        //   name: "Address1",
-        //   weight: 0.1
-        // },
-        // {
-        // name: "Address2",
-        // weight: 0.05
-        // }
     ]
   }
-
-  // keys: [
-  //   {
-  //     name: 'title',
-  //     weight: 0.3
-  //   },
-  //   {
-  //     name: 'author',
-  //     weight: 0.7
-  //   }
-  // ]
-  const [zipCodes, setZipCodes] = useState([]);
-  const [neighborhoodList, setNeighborhoodList] = useState([]);
-  const [zip,setZip] = useState("");
 
 const handleQuizResult = (userResult) => {
   if (userResult != "") {
@@ -215,12 +194,10 @@ const handleSearchEngine = () => {
 
         <Route path="/survey/*" element={<QuestionsPage setUserResult={setUserResult} userResult={userResult} handleQuizResult={handleQuizResult} setSearchTerm={setSearchTerm} setSummaryBanner={setSummaryBanner}/>}/>
 
-        <Route path="/results/" element ={<Results zip={zip}daneighborhood={daneighborhood}userResult={userResult} filteredResults={filteredResults} searchTerm={searchTerm} summaryBanner={summaryBanner} results={results} reviewName={reviewName} setReviewName={setReviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1} setPhoto2={setPhoto2} setPhoto3={setPhoto3} setAddress1={setAddress1} setAddress2={setAddress2} setWebsite={setWebsite} setTelephone={setTelephone} setNeighborhood={setNeighborhood} setTag={setTag} setBlurb1={setBlurb1} setBlurb2={setBlurb2} setBlurb3={setBlurb3} setAbout={setAbout} setSummaryBanner={setSummaryBanner} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude} reviewLatitude={reviewLatitude} reviewLongitude={reviewLongitude} locationInquiry={locationInquiry}/>}/>
+        <Route path="/results/" element ={<Results zip={zip}daneighborhood={daneighborhood}userResult={userResult} filteredResults={filteredResults} searchTerm={searchTerm} summaryBanner={summaryBanner} results={results} reviewName={reviewName} setReviewName={setReviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1} setPhoto2={setPhoto2} setPhoto3={setPhoto3} setAltText1={setAltText1} setAltText2={setAltText2} setAltText3={setAltText3} setAddress1={setAddress1} setAddress2={setAddress2} setWebsite={setWebsite} setTelephone={setTelephone} setNeighborhood={setNeighborhood} setTag={setTag} setBlurb1={setBlurb1} setBlurb2={setBlurb2} setBlurb3={setBlurb3} setAbout={setAbout} setSummaryBanner={setSummaryBanner} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude} reviewLatitude={reviewLatitude} reviewLongitude={reviewLongitude} locationInquiry={locationInquiry}/>}/>
 
-        <Route path="/results/:id/" element={<ResultDetails reviewName={reviewName} photoOne={photoOne} photoTwo={photoTwo} photoThree={photoThree} zipCode={zipCode} Address1={Address1} Address2={Address2} website={website} telephone={telephone} neighborhood={neighborhood} tag={tag} blurb1={blurb1} blurb2={blurb2}blurb3={blurb3} about={about} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude} reviewLatitude={reviewLatitude} reviewLongitude={reviewLongitude} />}/>
+        <Route path="/results/:id/" element={<ResultDetails reviewName={reviewName} photoOne={photoOne} photoTwo={photoTwo} photoThree={photoThree} altText1={altText1} altText2={altText2} altText3={altText3} zipCode={zipCode} Address1={Address1} Address2={Address2} website={website} telephone={telephone} neighborhood={neighborhood} tag={tag} blurb1={blurb1} blurb2={blurb2}blurb3={blurb3} about={about} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude} reviewLatitude={reviewLatitude} reviewLongitude={reviewLongitude} />}/>
 
-        {/* <Route path="*" element={<ResultsPage results={results} setReviewName={setReviewName} reviewName={reviewName} handleSetName={handleSetName} setZipcode={setZipcode} setPhoto1={setPhoto1}filteredResults={filteredResults}searchTerm={searchTerm}exact summaryBanner={summaryBanner}setReviewLatitude={setReviewLatitude}setReviewLongitude={setReviewLongitude}reviewLatitude={reviewLatitude}reviewLongitude={reviewLongitude}/>} />
-         */}
         <Route path="/results/:id/" element={<ResultDetails reviewName={reviewName} photoOne={photoOne} zipCode={zipCode} setReviewLatitude={setReviewLatitude} setReviewLongitude={setReviewLongitude} reviewLatitude={reviewLatitude} reviewLongitude={reviewLongitude}/>}/>
         <Route path="/resources-page" element={<ResourcesPage accordionItems={accordionItems}/>}/>
       </Routes>
