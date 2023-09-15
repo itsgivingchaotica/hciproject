@@ -7,6 +7,7 @@ import styles from './map.module.css'
 export function Map({latitude,longitude,focus,newCenter}){
     parseFloat(latitude);
     parseFloat(longitude);
+    
     const center = useMemo(() => ({lat:latitude,lng:longitude}),[latitude,longitude])
     
     return (

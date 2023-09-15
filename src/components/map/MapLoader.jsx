@@ -4,7 +4,7 @@ import { Map } from './Map.jsx'
 
 export function MapLoader({latitude,longitude,focus}){
 
-const { isLoaded } = useLoadScript({ googleMapsApiKey: "AIzaSyAzOtJRseSi5uOc2YVLEo7DMe8cLxuSrvI"})
+const { isLoaded } = useLoadScript({ googleMapsApiKey: import.meta.env.VITE_NEXT_PUBLIC_GOOGLE_MAPS_API_KEY})
 
 const [pLatitude, setPLatitude] = useState(parseFloat(latitude));
 const [pLongitude, setPLongitude] = useState(parseFloat(longitude));

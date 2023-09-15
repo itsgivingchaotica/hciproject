@@ -5,8 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlassLocation } from '@fortawesome/free-solid-svg-icons'
-import { Typeahead } from 'react-bootstrap-typeahead';
-import { Link, useNavigate, Routes, Route} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styles from './searchBar.module.css';
 import zipcodesData from '../../../results.json'
 

@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState} from 'react';
-import { ResultDetails } from "./ResultsPage/ResultDetails/ResultDetails.jsx"
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { ResultDetails } from "./ResultsPage/ResultDetails/ResultDetails.jsx"
 import './App.css';
 import { SearchBar } from './components/SearchBar/SearchBar.jsx';
 import { Results } from './ResultsPage/Results/Results.jsx';
