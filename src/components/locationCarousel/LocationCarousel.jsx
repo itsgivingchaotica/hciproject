@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import styles from '../result/result.module.css';
+import styles from '../Result/result.module.css';
 
 export function LocationCarousel(props) {
 
